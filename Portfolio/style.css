@@ -1,0 +1,265 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #fbf4fb;
+    
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 10px 20px; 
+    color:rgb(151, 28, 233);
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.main-nav ul {
+    list-style: none; 
+    display: flex; 
+}
+
+.main-nav li {
+    margin-left: 30px; 
+    gap: 20px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #4e1175; 
+    font-size: 1em;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    background-color: #f5d6f4;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.main-nav a:hover {
+    background-color: #6e5471;
+}
+
+#home{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    background-color: #f5d6f4;  
+    padding: 50px 20px;
+    border-bottom: 1px solid #9a8e8e;
+    border-top: 1px solid #9a8e8e;
+    box-shadow: 2px #5f0895;
+}
+
+.home-content {
+    max-width: 800px;
+    margin: 0 auto;
+    flex:1;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.home-content h1 {
+    font-size: 2.5em;
+    color: #4e1175;
+}
+
+.home-content p {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.home-content button {
+    background-color: #53abf3;
+    color: white; 
+    border: none;
+    padding: 15px 30px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.home-content button:hover {
+    background-color: #560c63; 
+}
+
+.home-avatar {
+    width: 250px;  
+    height: 250px;
+    border-radius: 50%; 
+    object-fit: cover; 
+}
+
+.image-placeholder {
+    display: flex;
+    flex-direction: column; 
+    align-items: right; 
+    justify-content: space-around;
+    width: 250px;
+    height: 250px;
+    background-color: #fdfdff; 
+    border: 1px solid #e0e0e0;
+    border-radius: 50%;
+    padding: 10px;
+    background-size: 100% 100%;
+    background-image: url("my image.JPG");
+}
+
+#about {
+    padding: 50px 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-me {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.about-me h2 {
+    font-size: 2em;
+    color: #4e1175;
+}
+.about-me p {
+    font-size: 1.2em;
+    color: #333;
+}
+.skills {
+    margin-top: 20px;
+    margin: 10px;
+}
+
+.skills-container {
+  width: 100%;
+  max-width: 600px; 
+  padding: 20px;
+  margin: 0 auto; 
+}
+
+.skills-section {
+  margin-bottom: 40px; 
+}
+
+.skills-section h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #256cd0; 
+  margin-bottom: 25px;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.skill-name {
+  width: 140px; 
+  font-size: 16px;
+  color: #1f2937;
+  flex-shrink: 0; 
+}
+
+.skill-bar {
+  flex-grow: 1;
+  height: 10px;
+  background-color: #e5e7eb; 
+  border-radius: 5px;
+  overflow: hidden;
+
+}
+
+.skill-progress {
+  height: 100%;
+  background-color: #3b82f6; 
+  border-radius: 5px;
+}
+
+.soft-skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.soft-skills-list li {
+  background-color: #e4e8f1; 
+  color: #374151; 
+  padding: 8px 15px;
+  border-radius: 20px; 
+  font-size: 14px;
+}
+
+.My-Projects{
+  background-color: #f5d6f4; 
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 20px;
+  justify-content: center;
+  display:flex;
+}
+
+.project-section{
+  margin-left: 50px;
+  margin-right: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  flex-wrap: wrap;
+}
+
+h2{
+}
+
+.project-cards{
+  justify-content: center;
+  display:flex;
+  flex-direction: row;
+  align-items:center;
+  padding:10px;
+  gap:10px;
+}
+
+.project-card{
+  border: 1px solid grey;
+  border-radius: 25px;
+  justify-content: center;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  flex:1;
+  padding:10px;
+}
+
+.img{
+
+
+}
+
+.text-area{
+  border: 1px solid grey;
+}
+
+.Get-In-Touch{
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
