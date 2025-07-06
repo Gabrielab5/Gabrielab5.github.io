@@ -20,6 +20,7 @@
         </nav>
     </header>
 
+    <div class="home-background">
     <section id="home">
         <div class = "home-content">
         <h1><Strong> Software Engineer </Strong></h1>
@@ -32,7 +33,7 @@
         
         </div>
     </section>
-
+    </div>
     <section id="about">
         <div class ="about-me"> 
         <h2>About Me</h2>
@@ -128,28 +129,36 @@
 </div>
     </section>
 
-    <section class="My-Projects">
+    <section class="My-Projects" id="projects">
         <div class="projects-section">
         <h2>My Projects</h2>
         <div class="project-cards"> 
           
            <div class="EnerGenius project-card"> 
                 <div class="EnerGenius img">  </div>
+                <div class="description">  
                 <p> <strong> EnerGenius- Energy Optimization Web Application </strong></p>
                 <p> </p>
-                <button> View Project </button>
+                <button> View Project </button> 
+              </div>       
           </div>
+
            <div class="Movie-System project-card"> 
              <div class="Movie-System img">  </div>
-                <p> <strong> Movie Ticket System  </strong></p>
-                <p> </p> 
-                <button> View Project </button>
+                <div class="description">  
+                <p> <strong> Movie Tickets Stystem </strong></p>
+                <p> </p>
+                <button> View Project </button> 
+              </div>
           </div>
+
            <div class="doctors-web project-card"> 
                <div class="EnerGenius img">  </div>
-                <p> <strong> doctors-web  </strong></p>
+               <div class="description">  
+                <p> <strong> Doctors Social Web Application </strong></p>
                 <p> </p>
-                <button> View Project </button>
+                <button> View Project </button> 
+              </div>
           </div>
           </div>
             
@@ -157,8 +166,9 @@
       </section>
 
       <form class="Get-In-Touch">
-        <h2> Get In Touch</h2>       
-        <div class="fields-section">
+        <div> <h2> Get In Touch</h2>  </div> 
+        <div class="bottom-section">
+          <div class="fields-section">
             <div class="name"> 
               <p> Name</p>
               <textarea class="text-area"> </textarea>
@@ -172,16 +182,26 @@
               <textarea class="text-area"> </textarea>
             </div>
         </div>
-        <div class="Contact-section">
+        <div class="Contact-section" id="contact">
             <h3> Contact Information</h3>
-            <p> gabrielab5000@gmail.com </p>
-            <p> +972-52-338-1612 </p>
-            <p> Central District, Israel</p>
-            <div class="links">
-              <link class="linkedin"> 
-            </div>
-        </div>
+            <ul class="contact-info-list">
+               <li>📧 gabrielab5000@gmail.com</li>
+               <li>📞 +972 52 338 1612</li>
+               <li>📍 Central District, Israel</li>
+           </ul>
+           <div class="social-icons">
+               <a href="#" class="social-icon">in</a>
+               <a href="#" class="social-icon">G</a>
+               <a href="#" class="social-icon">X</a>
+           </div>
+        </div> 
+       </div> 
+        <button >Send Message</button>  
       </form>
+
+      <div class="footer">
+        2025 Gabriela Brailovsky. All rights reserved
+      </div>
       
     
 
