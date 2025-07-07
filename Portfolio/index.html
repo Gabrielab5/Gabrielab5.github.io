@@ -187,8 +187,8 @@
                     <div class="contact-info">
                         <h3>Contact Information</h3>
                         <ul class="contact-info-list">
-                            <li>📧 gabrielab5000@gmail.com</li>
-                            <li>📞 +972 52 338 1612</li>
+                            <li>📧 mailto: gabrielab5000@gmail.com</li>
+                            <li>📞 tel: +972 52 338 1612</li>
                             <li>📍 Central District, Israel</li>
                         </ul>
                         <div class="social-icons">
@@ -208,5 +208,14 @@
         </div>
     </footer>
       
+    <script> 
+      const hamburger = document.querySelector('.hamburger-menu');
+      const navMenu = document.querySelector('.main-nav');
+
+      hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('is-open');
+      })
+    </script>
+    
 </body>
 </html>
