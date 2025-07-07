@@ -129,7 +129,7 @@ a{
   border-radius: 50%;
   background-size: cover;
   background-position: center;
-  background-image: url("my image.JPG");
+  background-image: url("images/my image.JPG");
   min-width: 250px;
   min-height: 250px;
   display: flex;
@@ -257,15 +257,15 @@ a{
 }
 
 .project-image.medhub-img{
-  background-image: url("medhub-img.png");
+  background-image: url("images/medhub-img.png");
 }
 
 .project-image.energenius-img{
-  background-image: url("energenius-img.png");
+  background-image: url("images/energenius-img.png");
 }
 
 .project-image.movie-img{
-  background-image: url("movie-img.png");
+  background-image: url("images/movie-img.png");
 }
 
 .project-info {
