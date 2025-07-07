@@ -362,9 +362,13 @@ a{
   border-radius: 50%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
+  justify-content: center;  
   transition: background-color 0.3s;
+}
+
+.social-svg {
+    width: 24px;
+    height: 24px;
 }
 
 .social-icon:hover {
