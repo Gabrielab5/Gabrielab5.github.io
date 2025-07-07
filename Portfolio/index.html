@@ -28,7 +28,7 @@
         <div class = "container hero-container">
           <div class="hero-text">
               <h1><Strong> Software Engineer </Strong></h1>
-              <p>Hi, I'm Gabriela Brailovsky — a Software Engineer specializing in both frontend and backend development. I'm a highly motivated and detail-oriented Software Engineering student with hands-on experience in full-stack development, backend engineering, and AI-driven systems..</p>
+              <p>Hi, I'm Gabriela Brailovsky - a Software Engineer specializing in both frontend and backend development. I'm a highly motivated and detail-oriented Software Engineering student with hands-on experience in full-stack development, backend engineering, and AI-driven systems..</p>
               <p>This website, which I designed and built from scratch, showcases more about me, my projects, and the work I’m passionate about. I combine academic excellence with practical problem-solving, a fast learning ability, and strong teamwork skills.</p>
               <a href="#contact" class="btn">Get In Touch</a>
           </div>
@@ -171,7 +171,7 @@
             <div class="container">
                 <h2>Get In Touch</h2>
                 <div class="contact-content">
-                    <form class="contact-form" action="mailto:gabrielab5000@gmail.com" method="post" enctype="text/plain">
+                    <form class="contact-form" >
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name">
@@ -216,6 +216,14 @@
             <p>&copy; 2025 Gabriela Brailovsky. All rights reserved.</p>
         </div>
     </footer>
+
+    <div id="success-modal" class="modal-overlay hidden">
+        <div class="modal">
+            <button class="close-button">&times;</button>
+            <h3>Success!</h3>
+            <p>Your email client has been opened. Please complete sending the message from there.</p>
+        </div>
+    </div>
       
     <script> 
       const hamburger = document.querySelector('.hamburger-menu');
@@ -224,6 +232,47 @@
       hamburger.addEventListener('click', () => {
         navMenu.classList.toggle('is-open');
       })
+
+      const contactForm = document.querySelector('.contact-form');
+      const successModal = document.querySelector('#success-modal');
+      const closeModalBtn = successModal.querySelector('.close-button');
+
+      contactForm.addEventListener('submit', function(event) {
+          event.preventDefault(); 
+
+          const name = document.getElementById('name').value.trim();
+          const email = document.getElementById('email').value.trim();
+          const message = document.getElementById('message').value.trim();
+
+          if (name && email && message) {
+              successModal.classList.remove('hidden');
+
+              const subject = `Contact from ${name}`;
+              const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+              const mailtoLink = `mailto:gabrielab5000@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;  
+
+              setTimeout(() => {
+                    window.location.href = mailtoLink;
+                }, 100); 
+
+              contactForm.reset();
+
+          } else {
+              alert('Please fill out all fields before sending.');
+          }
+      });
+
+      function hideModal() {
+          successModal.classList.add('hidden');
+      }
+
+      closeModalBtn.addEventListener('click', hideModal);
+
+      successModal.addEventListener('click', function(event) {
+          if (event.target === successModal) {
+              hideModal();
+          }
+      });
     </script>
 
 </body>
