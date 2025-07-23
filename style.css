@@ -129,7 +129,7 @@ a{
   border-radius: 50%;
   background-size: cover;
   background-position: center;
-  background-image: url("images/my image.JPG");
+  background-image: url("images/my image.png");
   min-width: 250px;
   min-height: 250px;
   display: flex;
@@ -227,6 +227,23 @@ a{
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
+  overflow-x: auto; 
+  padding-bottom: 1.5rem; 
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin; 
+  scrollbar-color: #3B82F6 #F3F4F6; 
+}
+
+.project-cards::-webkit-scrollbar {
+  height: 8px;
+}
+.project-cards::-webkit-scrollbar-track {
+  background: #E5E7EB;
+  border-radius: 10px;
+}
+.project-cards::-webkit-scrollbar-thumb {
+  background-color: #3B82F6;
+  border-radius: 10px;
 }
 
 .project-card {
@@ -236,8 +253,7 @@ a{
   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
   display: flex;
   flex-direction: column;
-  flex-basis: calc(33.333% - 1.5rem);
-  flex-grow: 1;
+  flex: 0 0 360px; 
   overflow: hidden;
 }
 
@@ -250,9 +266,8 @@ a{
   color: #6B7280;
   object-fit: cover; 
   flex-shrink: 0;
-  background-size:  100% 100%;;
+  background-size: cover;
   background-position: center;  
-  min-width: 250px;
   min-height: 250px;
 }
 
@@ -266,6 +281,26 @@ a{
 
 .project-image.movie-img{
   background-image: url("images/movie-img.png");
+}
+
+.project-image.vehicle-agency-img {
+  background-image: url("images/vehicle-agency-img.png");
+}
+
+.project-image.menu-img {
+  background-image: url("images/menu-img.png");
+}
+
+.project-image.dilithium-img {
+  background-image: url("images/dilithium-img.png");
+}
+
+.project-image.chess-img {
+  background-image: url("images/chess-img.png");
+}
+
+.project-image.chat-img {
+  background-image: url("images/chat-img.png");
 }
 
 .project-info {
@@ -540,7 +575,8 @@ a{
   }
 
   .project-grid {
-    flex-basis: 100%;;
+    flex-basis: 100%;
+    flex: 0 0 300px;
   }
 
   .btn{
