@@ -61,11 +61,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const contactForm = document.getElementById('contact-form');
         
         if (!contactForm) {
-            console.warn("Contact form element not found. EmailJS will not be initialized."); // הוסף אזהרה
+            console.warn("Contact form element not found. EmailJS will not be initialized."); 
             return;
         }
 
-        emailjs.init('U0go_CQJNxXTWwCJh'); 
+        (function() {
+            emailjs.init({
+                publicKey: "U0go_CQjNXXTWWcjH",
+            });
+        })(); 
         
         const successModal = document.getElementById('success-modal');
         const closeModalBtn = successModal.querySelector('.close-button');
@@ -81,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         closeModalButtons.forEach(button => {
             button.addEventListener('click', () => {
                 successModal.classList.add('hidden');
-                if (errorModal) errorModal.classList.add('hidden'); // סגור גם את מודאל השגיאה
+                if (errorModal) errorModal.classList.add('hidden'); 
             });
         });
 
