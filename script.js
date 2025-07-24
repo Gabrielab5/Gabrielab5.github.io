@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!card) return;
 
         const gap = parseInt(window.getComputedStyle(projectsContainer).gap, 10) || 32;
-    const scrollAmount = card.offsetWidth + gap;
+        const scrollAmount = card.offsetWidth + gap;
 
         nextButton.addEventListener('click', () => {
             const isAtEnd = projectsContainer.scrollLeft + projectsContainer.clientWidth >= projectsContainer.scrollWidth - 1;
@@ -60,8 +60,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function setupContactForm() {
         const contactForm = document.getElementById('contact-form');
         
-        if (!contactForm) return;
-        
+        if (!contactForm) {
+            console.warn("Contact form element not found. EmailJS will not be initialized."); // הוסף אזהרה
+            return;
+        }
+
         emailjs.init('__EMAILJS_PUBLIC_KEY__'); 
         
         const successModal = document.getElementById('success-modal');
@@ -69,7 +72,34 @@ document.addEventListener('DOMContentLoaded', () => {
         const submitBtn = document.getElementById('submit-btn');
         const emailError = document.getElementById('email-error');
         const messageError = document.getElementById('message-error');
+        const emailInput = document.getElementById('email');
+        const messageInput = document.getElementById('message');
+        const errorModal = document.getElementById('error-modal'); 
+        const errorMessageText = document.getElementById('error-message-text'); 
+        const closeModalButtons = document.querySelectorAll('.modal .close-button');
 
+        closeModalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                successModal.classList.add('hidden');
+                if (errorModal) errorModal.classList.add('hidden'); // סגור גם את מודאל השגיאה
+            });
+        });
+
+        if (successModal) {
+            successModal.addEventListener('click', (event) => {
+                if (event.target === successModal) successModal.classList.add('hidden');
+            });
+        }
+        if (errorModal) {
+            errorModal.addEventListener('click', (event) => {
+                if (event.target === errorModal) errorModal.classList.add('hidden');
+            });
+        }
+
+        if (!submitBtn) {
+            console.warn("Submit button element not found.");
+            return;
+        }
         function validateEmail(email) {
             const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(String(email).toLowerCase());
@@ -80,10 +110,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             emailError.textContent = '';
             messageError.textContent = '';
+            if (errorMessageText) errorMessageText.textContent = ''; 
+            if (errorModal) errorModal.classList.add('hidden');
+
             let isValid = true;
 
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
+            const email = emailInput.value.trim();
+            const message = messageInput.value.trim();
 
             if (!validateEmail(email)) {
                 emailError.textContent = 'Please enter a valid email address.';
@@ -104,8 +137,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     successModal.classList.remove('hidden');
                     contactForm.reset();
                 }, (error) => {
-                    console.log('FAILED...', error);
-                    alert('Oops! Something went wrong. Please try again.');
+                    console.error('EmailJS FAILED to send:', error);
+                    const errorModal = document.getElementById('error-modal'); 
+                    const errorMessage = document.getElementById('error-message-text'); 
+                    if (errorModal && errorMessage) {
+                        errorMessage.textContent = 'Failed to send message. Please try again later.';
+                        errorModal.classList.remove('hidden');
+                    } else {
+                        alert('Oops! Something went wrong. Please try again.'); 
+                    }
                 })
                 .finally(() => {
                     submitBtn.disabled = false;
