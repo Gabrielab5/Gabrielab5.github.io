@@ -596,6 +596,12 @@ a:hover {
   }
 }
 
+.error-icon {
+  font-size: 4rem;
+  color: #ff6b6b;
+  margin-bottom: 1rem;
+}
+
 .project-image.medhub-img{ background-image: url("images/medhub-img.png"); }
 .project-image.energenius-img{ background-image: url("images/energenius-img.png"); }
 .project-image.movie-img{ background-image: url("images/movie-img.png"); }
