@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - portfolio-update
 
 permissions:
   contents: write
@@ -12,6 +11,11 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+      
     env:
       KEY: ${{ secrets.EMAILJS_PUBLIC_KEY }}
       SERVICE: ${{ secrets.EMAILJS_SERVICE_ID }}
