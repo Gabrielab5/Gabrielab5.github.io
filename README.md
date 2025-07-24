@@ -25,7 +25,7 @@ This project was built with a focus on fundamental web development skills, enhan
 
 HTML5: For the structure and semantic content of the website.
 
-CSS3: For all styling, layout, and animations.
+CSS3: For all styling, layout, and animations .
 
 Flexbox & Grid: Used for all major layout components to create a responsive and modern design.
 
