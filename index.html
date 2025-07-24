@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriela Brailovsky</title>
+    <title>Gabriela Brailovsky - Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
 </head>
 <body>
 
@@ -28,9 +34,9 @@
         <div class = "container hero-container">
           <div class="hero-text">
               <h1><Strong> Software Engineer </Strong></h1>
-              <p>Hi, I'm Gabriela Brailovsky - a Software Engineer specializing in both frontend and backend development. I'm a highly motivated and detail-oriented Software Engineering student with hands-on experience in full-stack development, backend engineering, and AI-driven systems..</p>
+              <p>Hi, I'm Gabriela Brailovsky - a Software Engineer specializing in both frontend and backend development. I'm a highly motivated and detail-oriented Software Engineering student with hands-on experience in full-stack development, backend engineering, and AI-driven systems.</p>
               <p>This website, which I designed and built from scratch, showcases more about me, my projects, and the work I’m passionate about. I combine academic excellence with practical problem-solving, a fast learning ability, and strong teamwork skills.</p>
-              <a href="#contact" class="btn">Get In Touch</a>
+              <a href="#contact" class="btn" id="getInTouch">Get In Touch</a>
           </div>
         <div class="hero-photo"></div>
       </div>
@@ -135,13 +141,21 @@
      <section id="projects" class="My-Projects">
             <div class="container">
                 <h2>My Projects</h2>
+                <div class="projects-slider-wrapper">
+                <button class="slider-arrow prev-arrow" aria-label="Previous project"><i class="fas fa-chevron-left"></i></button>
                 <div class="project-cards">
                     <div class="project-card">
                         <div class="project-image energenius-img"></div>
                         <div class="project-info">
                             <h3>EnerGenius- Energy Optimization Web Application</h3>
                              <p>The EnerGenius project is a smart energy management platform designed to help users monitor, analyze, and optimize their electricity consumption. It enables users to upload consumption data—such as Excel files from their electricity provider—and receive personalized insights, forecasts, and energy-saving recommendations. The app includes features like consumption trend analysis, alert notifications for high usage, goal tracking, and actionable suggestions tailored to user behavior. With a user-friendly interface and a focus on data privacy, EnerGenius empowers households to take control of their energy use and reduce costs effectively.</p>
-                            <a href="https://github.com/Gabrielab5/EnerGenius-Web" target="_blank" class="btn btn-secondary">View Project</a>
+                              <div class="project-tech-icons">
+                              <i class="fa-brands fa-react" title="React"></i>
+                              <i class="fa-brands fa-python" title="Python"></i>
+                              <i class="fa-solid fa-database" title="Supabase (PostgreSQL)"></i>
+                              <span class="tech-icon-text" title="TypeScript">TS</span>
+                              </div>
+                             <a href="https://github.com/Gabrielab5/EnerGenius-Web" target="_blank" class="btn btn-secondary">View Project</a>
                         </div>
                     </div>
                     <div class="project-card">
@@ -149,7 +163,11 @@
                         <div class="project-info">
                             <h3>The Popcorn Palace - Movie Booking System</h3>
                              <p>The Popcorn Palace project is a Spring Boot-based web application designed to manage a movie booking system. It supports core features such as creating and retrieving movies, scheduling and validating showtimes without overlaps, and booking seats for showtimes while ensuring no duplicate reservations occur. The system is organized into clear layers: entities (like Movie, Showtime, and Booking), DTOs for request/response handling, controllers to manage RESTful API endpoints, and services for business logic. The application ensures robust data handling with input validation, exception management, and database integration via JPA repositories</p>
-                            <a href="https://github.com/Gabrielab5/popcorn-palace" target="_blank" class="btn btn-secondary">View Project</a>
+                              <div class="project-tech-icons">
+                              <i class="fa-brands fa-java" title="Java"></i>
+                              <i class="fa-solid fa-leaf" title="Spring Boot"></i>
+                            </div>
+                             <a href="https://github.com/Gabrielab5/popcorn-palace" target="_blank" class="btn btn-secondary">View Project</a>
                         </div>
                     </div>
                     <div class="project-card">
@@ -160,12 +178,88 @@
                                 The Frontend is built using React, offering an intuitive and user-friendly interface for users to interact, share updates, and connect with peers in the medical community.
                                 The Backend is developed with Node.js, responsible for handling API endpoints, business logic, and database operations to ensure secure and efficient data management.
                                 Together, these components deliver a seamless experience tailored for healthcare professionals to collaborate and communicate effectively. </p>
-                            <a href="https://github.com/MedHubTeam/medhub-backend" target="_blank" class="btn btn-secondary">View Project</a>
+                              <div class="project-tech-icons">
+                                <i class="fa-brands fa-react" title="React"></i>
+                                <i class="fa-brands fa-node-js" title="Node.js"></i>
+                                <i class="fa-solid fa-database" title="MongoDB"></i>
+                            </div>
+                              <a href="https://github.com/MedHubTeam/medhub-backend" target="_blank" class="btn btn-secondary">View Project</a>
                         </div>
                     </div>
+                    <div class="project-card">
+                        <div class="project-image vehicle-agency-img"></div>
+                        <div class="project-info">
+                            <h3>Vehicle Agency - Java</h3>
+                            <p>A comprehensive vehicle agency management system built with Java. This application handles inventory, sales, and customer data, providing a robust backend solution for a car dealership.</p>
+                              <div class="project-tech-icons">
+                              <i class="fa-brands fa-java" title="Java"></i>
+                            </div>
+                            <a href="https://github.com/Gabrielab5/Car-Agency-Project" target="_blank" class="btn btn-secondary">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image menu-img"></div>
+                        <div class="project-info">
+                            <h3>Restaurant Menu App</h3>
+                            <p>A dynamic and responsive web application for displaying a restaurant menu. Built with a focus on a clean user interface and easy navigation for customers to browse through food items.</p>
+                            <div class="project-tech-icons">
+                              <i class="fa-brands fa-html5" title="HTML5"></i>
+                              <i class="fa-brands fa-css3-alt" title="CSS3"></i>
+                              <i class="fa-brands fa-js" title="JavaScript"></i>
+                            </div>
+                            <a href="https://github.com/Gabrielab5/restaurant-menu-app" target="_blank" class="btn btn-secondary">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image dilithium-img"></div>
+                        <div class="project-info">
+                            <h3>Dilithium Signatures</h3>
+                            <p>An implementation of the CRYSTALS-Dilithium digital signature algorithm. This project explores post-quantum cryptography, providing a secure method for verifying digital communications.</p>
+                             <div class="project-tech-icons">
+                              <i class="fa-solid fa-shield-halved" title="Cryptography"></i>
+                              <i class="fa-brands fa-python" title="Python"></i>
+                            </div>
+                            <a href="https://github.com/Gabrielab5/dilithium_signatures" target="_blank" class="btn btn-secondary">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image chess-img"></div>
+                        <div class="project-info">
+                            <h3>Chess in C++</h3>
+                            <p>A classic game of chess developed in C++. This project showcases object-oriented programming principles and game logic implementation, featuring a fully playable chess engine.</p>
+                            <div class="project-tech-icons">
+                             <span class="tech-icon-text" title="C++">C++</span>
+                            </div>
+                            <a href="https://github.com/Gabrielab5/chess-cpp" target="_blank" class="btn btn-secondary">View Project</a>
+                        </div>
+                    </div>
+                     <div class="project-card">
+                        <div class="project-image chat-img"></div>
+                        <div class="project-info">
+                            <h3>Secure Chat Collaboration</h3>
+                            <p>A secure chat application developed as a collaborative project. It focuses on end-to-end encryption to ensure private and safe communication between users.</p>
+                            <div class="project-tech-icons">
+                            <i class="fa-brands fa-node-js" title="Node.js"></i>
+                            <i class="fa-solid fa-shield-halved" title="Security"></i>
+                            <span class="tech-icon-text" title="TypeScript">TS</span>
+                          </div>
+                            <a href="https://github.com/hamodi15-code/SecureTalk" target="_blank" class="btn btn-secondary">View Project</a>
+                        </div>
+                    </div>
+                    </div>
+                  <button class="slider-arrow next-arrow" aria-label="Next project"><i class="fas fa-chevron-right"></i></button>
+                  </div>
                 </div>
             </div>
       </section>
+
+       <section id="resume" class="resume-section">
+            <div class="container">
+                <h2>Resume</h2>
+                <p>Feel free to download my resume to get a more detailed view of my skills and experience.</p>
+                <a href="Gabriela-Brailovsky-CV.docx" target="_blank" class="btn">Download CV <i class="fas fa-download"></i></a>
+            </div>
+          </section>
 
         <section id="contact" class="Get-In-Touch">
             <div class="container">
@@ -174,36 +268,30 @@
                     <form class="contact-form" >
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" id="name" name="name">
+                            <input type="text" id="name" name="name" required>                       
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email">
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message" id="email-error"></span>
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5"></textarea>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <span class="error-message" id="message-error"></span>
                         </div>
-                        <button type="submit" class="btn">Send Message</button>
+                        <button type="submit" class="btn">Send Message <i class="fas fa-paper-plane"></i> </button>
                     </form>
                     <div class="contact-info">
                         <h3>Contact Information</h3>
                         <ul class="contact-info-list">
-                            <li><a href="mailto:gabrielab5000@gmail.com"></a>📧 gabrielab5000@gmail.com</a></li>
-                            <li><a href="tel:+972523381612"></a>📞 tel: +972 52 338 1612</a></li>
-                            <li>📍 Central District, Israel</li>
+                            <li><a href="mailto:gabrielab5000@gmail.com"><i class="fas fa-envelope"></i> gabrielab5000@gmail.com</a></li>
+                            <li><a href="tel:+972523381612"><i class="fas fa-phone"></i> tel: +972 52 338 1612</a></li>
+                            <li><i class="fas fa-map-marker-alt"></i> Central District, Israel</li>
                         </ul>
                         <div class="social-icons">
-                            <a href="https://www.linkedin.com/in/gabrielabrail/" target="_blank" class="social-icon" aria-label="LinkedIn">
-                               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="social-svg">
-                                    <path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2ZM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 1 1 8.25 6.5 1.75 1.75 0 0 1 6.5 8.25ZM19 19h-3v-4.75c0-1.4-1.2-2.5-2.5-2.5S11 12.85 11 14.25V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.6-1.4c1.8 0 3.5 1.6 3.5 4.9z"></path>
-                                </svg>
-                            </a>
-                            <a href="https://github.com/Gabrielab5" target="_blank" class="social-icon" aria-label="GitHub">
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="social-svg">
-                                    <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69a3.6 3.6 0 0 1 .1-2.64s.84-.27 2.75 1.02a9.58 9.58 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.4.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.72c0 .27.18.58.69.48A10 10 0 0 0 22 12 10 10 0 0 0 12 2Z"></path>
-                                </svg>
-                            </a>
+                            <a href="https://www.linkedin.com/in/gabrielabrail/" target="_blank" class="social-icon" aria-label="LinkedIn"> <i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://github.com/Gabrielab5" target="_blank" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                 </div>
@@ -213,6 +301,7 @@
 
        <footer class="footer">
         <div class="container">
+            <h3>HIRE ME TO UNLOCK MY FULL POTENTIAL!</h3>
             <p>&copy; 2025 Gabriela Brailovsky. All rights reserved.</p>
         </div>
     </footer>
@@ -220,60 +309,13 @@
     <div id="success-modal" class="modal-overlay hidden">
         <div class="modal">
             <button class="close-button">&times;</button>
-            <h3>Success!</h3>
-            <p>Your email client has been opened. Please complete sending the message from there.</p>
+            <i class="fas fa-check-circle success-icon"></i>
+            <h3>Message sent successfully!</h3>
+            <p>We'll be in touch :)</p>
         </div>
     </div>
       
-    <script> 
-      const hamburger = document.querySelector('.hamburger-menu');
-      const navMenu = document.querySelector('.main-nav');
-
-      hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('is-open');
-      })
-
-      const contactForm = document.querySelector('.contact-form');
-      const successModal = document.querySelector('#success-modal');
-      const closeModalBtn = successModal.querySelector('.close-button');
-
-      contactForm.addEventListener('submit', function(event) {
-          event.preventDefault(); 
-
-          const name = document.getElementById('name').value.trim();
-          const email = document.getElementById('email').value.trim();
-          const message = document.getElementById('message').value.trim();
-
-          if (name && email && message) {
-              successModal.classList.remove('hidden');
-
-              const subject = `Contact from ${name}`;
-              const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-              const mailtoLink = `mailto:gabrielab5000@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;  
-
-              setTimeout(() => {
-                    window.location.href = mailtoLink;
-                }, 100); 
-
-              contactForm.reset();
-
-          } else {
-              alert('Please fill out all fields before sending.');
-          }
-      });
-
-      function hideModal() {
-          successModal.classList.add('hidden');
-      }
-
-      closeModalBtn.addEventListener('click', hideModal);
-
-      successModal.addEventListener('click', function(event) {
-          if (event.target === successModal) {
-              hideModal();
-          }
-      });
-    </script>
+    <script src="script.js" defer></script>
 
 </body>
 </html>
