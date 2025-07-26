@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        emailjs.init(EMAILJS_PUBLIC_KEY);
+        emailjs.init('__EMAILJS_PUBLIC_KEY__');
         
         const successModal = document.getElementById('success-modal');
         const closeModalBtn = successModal.querySelector('.close-button');
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
             submitBtn.innerHTML = 'Sending...';
 
-            emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
+            emailjs.sendForm('__EMAILJS_SERVICE_ID__', '__EMAILJS_TEMPLATE_ID__', this)
                 .then(() => {
                     placeholder="Your Message"
                     successModal.classList.remove('hidden');
