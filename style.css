@@ -10,22 +10,11 @@
   --border-color: rgba(255, 255, 255, 0.1);
 }
 
+/*--Global--*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-.about-me p{
-  background-image: linear-gradient(to right, rgba(255,255,255,0.02), rgba(255,255,255,0.05), rgba(255,255,255,0.02));
-  padding: 10px 15px; 
-  border-radius: 5px; 
-  margin-bottom: 1em;
-   box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Very light shadow */
-  padding: 10px 15px;
-  border-radius: 5px;
-  border: 1px solid rgba(255,255,255,0.05); /* Or a very subtle border */
-  margin-bottom: 1em;
 }
 
 html {
@@ -48,14 +37,17 @@ body {
   padding: 0 2rem;
 }
 
+/*--Headlines--*/
+
 h1, h2, h3 {
   font-weight: 600;
   color: #FFFFFF;
+  margin-bottom: 2rem;
 }
 
 h1 { font-size: 3rem; text-shadow: 0 0 15px rgba(0, 242, 254, 0.3); }
-h2 { font-size: 2.5rem; margin-bottom: 3rem; margin-top: 3rem; text-align: center; }
-h3 { font-size: 1.5rem; margin-bottom: 2rem; }
+h2 { font-size: 2.5rem; margin-top: 3rem; text-align: center; }
+h3 { font-size: 1.5rem; }
 
 section {
   padding: 5rem 0;
@@ -136,7 +128,7 @@ a:hover {
   min-height: 80vh;
   display: flex;
   align-items: center;
-  background: radial-gradient(circle at 50% 50%, rgba(165, 161, 207, 0.4), transparent 70%);
+  background: radial-gradient(circle at 50% 50%, rgba(165, 161, 207, 0.4), transparent 90%);
 }
 
 .hero-container {
@@ -173,7 +165,7 @@ a:hover {
   background-position: center;
   background-image: url("images/my image.png");
   border: 5px solid var(--card-bg-color);
-  box-shadow: 0 0 25px rgba(138, 43, 226, 0.4), 0 0 15px rgba(0, 242, 254, 0.3) inset;
+  box-shadow: 0 0 5px rgba(138, 43, 226, 0.4), 0 0 15px rgba(0, 242, 254, 0.3) inset;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
@@ -213,6 +205,20 @@ a:hover {
 .about-section .container {
   display: flex;
   gap: 4rem;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 50%, rgba(165, 161, 207, 0.4), transparent 50%);
+}
+
+.about-me p{
+  background: linear-gradient(200deg, var(--bg-color-start), var(--bg-color-mid), var(--bg-color-end));
+  padding: 10px 15px; 
+  border-radius: 5px; 
+  margin-bottom: 1em;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid rgba(255,255,255,0.05); 
+  margin-bottom: 1em;
 }
 
 .about-me { flex: 2; }
@@ -271,7 +277,7 @@ a:hover {
 
 .projects-slider-wrapper {
   position: relative;
-  padding: 0 4.5rem;
+  padding:0 4.5rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -604,7 +610,7 @@ a:hover {
 .horizontal-timeline {
   position: relative;
   width: max-content; 
-  height: max-content;
+  height: auto;
   display: flex;
   justify-content: space-around; 
   align-items: center;
@@ -921,10 +927,24 @@ a:hover {
   .project-cards {  scroll-snap-type: x mandatory;  gap: 0; }
   .projects-slider-wrapper {  padding: 0; }
 
+  .hero-section {
+    justify-content: center;  
+  }
+
+  .hero-container {
+    gap: 0rem;
+  }
+
   .hero-text {
     width: 100%;
     align-items: center; 
     text-align: center; 
+    font-size: 0.5rem;
+  }
+
+  .hero-photo{
+    width: 300px;
+    height: 300px;
   }
 
   .body, html{
@@ -932,13 +952,18 @@ a:hover {
     width:100%;
   }
 
+  .timeline-section{
+    padding:5px;
+    padding-bottom: 10px;
+  }
   .timeline-scroll-wrapper {
-    padding: 0 10px; 
-    margin: 0 auto; 
+    padding: 0 ; 
+    margin: auto;
+    width:100%; 
   }
 
   .timeline-scroll-container {
-    padding: 5px; 
+    padding: 0; 
     overflow-x: hidden;
     scroll-snap-type: none;
     width: 100%;
@@ -951,7 +976,7 @@ a:hover {
   .horizontal-timeline {
     flex-direction: column;
     align-items: flex-start;
-    padding-bottom: 0;
+    padding-bottom: 20px;
     overflow-x: hidden; 
     gap: 1.5rem;
     scroll-snap-type: none;
@@ -961,7 +986,7 @@ a:hover {
   }
 
   .timeline-line {
-    left: 35px;
+    left: 30px;
     right: auto;
     width: 6px;
     height: calc(100% - 1rem);
@@ -974,7 +999,9 @@ a:hover {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
     margin-left: 0;
-    padding-left: 80px; 
+    margin-right: 10px;
+    padding-left: 50px; 
+    padding-right: 20px; 
     text-align: left;
     scroll-snap-align: none;  
     min-height: auto; 
@@ -991,7 +1018,7 @@ a:hover {
 
   .timeline-above-line .timeline-h-dot,
   .timeline-below-line .timeline-h-dot {
-    top: 50px;
+    top: 70px;
     bottom: auto;
   }
 
@@ -1009,11 +1036,12 @@ a:hover {
 
   .timeline-above-line .timeline-h-content,
   .timeline-below-line .timeline-h-content {
+    width:100%;
     bottom: auto; 
     top: auto;
     margin-top: 10px;
     margin-bottom: 0;
-    margin-left: 20px; 
+    margin-left: 15px; 
   }
 
   .timeline-h-content ul li {
