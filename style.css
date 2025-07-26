@@ -166,8 +166,8 @@ a:hover {
 .hero-photo {
   margin:0;
   flex-shrink: 0;
-  width: 400px;
-  height: 400px;
+  width: 380px;
+  height: 380px;
   border-radius: 50%;
   background-size: cover;
   background-position: center;
@@ -544,95 +544,6 @@ a:hover {
   left: 0;
 }
 
-/* --- Responsive Design --- */
-@media (max-width: 992px) {
-  .about-section .container, .hero-container, .contact-content {
-    flex-direction: column;
-  }
-  .hero-text { text-align: center; order: 2; }
-  .hero-photo { order: 1; margin-bottom: 2rem; }
-  .about-me h2, .skills-section h2 { text-align: center; }
-  .soft-skills-list { justify-content: center; }
-  .contact-info, .contact-form {
-      text-align: center;
-      width: 100%;
-      max-width: 500px;
-      margin: 0 auto;
-  }
-
-   .contact-info-list li {
-    justify-content: center; /* ממורכז את התוכן בתוך ה-li (אייקון + טקסט) */
-    text-align: center;
-    width: 100%; /* ודא שהפריט תופס את מלוא הרוחב של ההורה */
-  }
-
-  .social-icons { justify-content: center; }
-
-   .project-card {
-    flex: 0 0 45%; 
-    scroll-snap-align: start; 
-  }
-   .project-card {
-      flex: 0 0 calc(100% / 2);
-  }
-}
-
-@media (max-width: 1024px) {
-  .projects-slider-wrapper {
-     padding: 0 3.5rem; 
-   }
-   .project-card {
-     flex: 0 0 calc((100% - 2rem) / 2);
-   }
-   .hero-text {
-    width: 100%;
-    align-items: center; 
-    text-align: center; 
-  }
-
-  .skills-container{
-    width: 100%;
-    align-items: center; 
-    text-align: center; 
-  }
-
-  .contact-info{
-    width: 100%;
-    align-items: center; 
-    text-align: center; 
-  }
-}
-
-@media (max-width: 768px) {
-  h1 { font-size: 2.5rem; }
-  h2 { font-size: 2rem; }
-  .main-nav {
-    display: none; position: absolute; top: 100%; left: 0;
-    width: 100%;
-    background-color: var(--bg-color-mid);
-    border-top: 1px solid var(--border-color);
-  }
-  .hamburger-menu { display: block; font-size: 1.8rem; color: var(--text-color); background: none; border: none; cursor: pointer; z-index: 1001; }
-  .main-nav.is-open { display: block; }
-  .main-nav ul { flex-direction: column; align-items: center; gap: 0; }
-  .main-nav li { width: 100%; text-align: center; }
-  .main-nav a { display: block; padding: 1rem; border-bottom: 1px solid var(--border-color); }
-  .main-nav li:last-child a { border-bottom: none; }
-
-  .project-card { 
-    flex: 0 0 100%;
-    gap: 0;
-    scroll-snap-align: center; }
-  .slider-arrow { backdrop-filter:var(--border-color);   }
-  .project-cards {  scroll-snap-type: x mandatory;  gap: 0; }
-  .projects-slider-wrapper {  padding: 0; }
-  .hero-text {
-    width: 100%;
-    align-items: center; 
-    text-align: center; 
-  }
-}
-
 .error-icon {
   font-size: 4rem;
   color: #ff6b6b;
@@ -641,7 +552,7 @@ a:hover {
 
 /* --- Horizontal Timeline Section Styles --- */
 .timeline-section {
-    padding: 6rem 0;
+    padding: 6rem 4rem;
     background-color: var(--bg-color-start);
     overflow: hidden; 
     position: relative;
@@ -676,35 +587,35 @@ a:hover {
 }
 
 .timeline-scroll-container::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 .timeline-scroll-container {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .horizontal-timeline {
-    position: relative;
-    width: max-content; 
-    height: max-content;
-    display: flex;
-    justify-content: space-around; 
-    align-items: center;
-    flex-wrap: nowrap;
-    gap: 90px;
-    margin: 25px;
+  position: relative;
+  width: max-content; 
+  height: max-content;
+  display: flex;
+  justify-content: space-around; 
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 90px;
+  margin: 25px;
 }
 
 .timeline-line {
-    position: absolute;
-    height: 6px;
-    background: linear-gradient(to right, var(--primary-color), var(--accent-color));
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-    width: 100%;
-    z-index: 1;
-    border-radius: 3px;
+  position: absolute;
+  height: 6px;
+  background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  border-radius: 3px;
 }
 
 .timeline-h-item {
@@ -869,6 +780,65 @@ a:hover {
     right: 0px; 
 }
 
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+  .about-section .container, .hero-container, .contact-content {
+    flex-direction: column;
+  }
+  .hero-text { text-align: center; order: 2; }
+  .hero-photo { order: 1; margin-bottom: 2rem; }
+  .about-me h2, .skills-section h2 { text-align: center; }
+  .soft-skills-list { justify-content: center; }
+  .contact-info, .contact-form {
+      text-align: center;
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+  }
+
+   .contact-info-list li {
+    justify-content: center;
+    text-align: center;
+    width: 100%; 
+  }
+
+  .social-icons { justify-content: center; }
+
+   .project-card {
+    flex: 0 0 45%; 
+    scroll-snap-align: start; 
+  }
+   .project-card {
+      flex: 0 0 calc(100% / 2);
+  }
+}
+
+@media (max-width: 1024px) {
+  .projects-slider-wrapper {
+     padding: 0 3.5rem; 
+   }
+   .project-card {
+     flex: 0 0 calc((100% - 2rem) / 2);
+   }
+   .hero-text {
+    width: 100%;
+    align-items: center; 
+    text-align: center; 
+  }
+
+  .skills-container{
+    width: 100%;
+    align-items: center; 
+    text-align: center; 
+  }
+
+  .contact-info{
+    width: 100%;
+    align-items: center; 
+    text-align: center; 
+  }
+}
+
 @media (min-width: 769px) and (max-width: 1200px) {
   .timeline-scroll-wrapper {
     padding: 0 10px;
@@ -893,94 +863,121 @@ a:hover {
     font-size: 0.75rem;
   }
 }
+
 @media (max-width: 768px) {
-    .timeline-scroll-wrapper {
-        padding: 0 15px; 
-        margin: 0 auto; 
-    }
-    .timeline-scroll-container {
-        padding: 5px; 
-        overflow-x: hidden;
-        scroll-snap-type: none;
-        width: 100%;
-        min-width: auto;
-        mask-image: none;
-        -webkit-mask-image: none;
-        min-height: auto;
-    }
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  .main-nav {
+    display: none; position: absolute; top: 100%; left: 0;
+    width: 100%;
+    background-color: var(--bg-color-mid);
+    border-top: 1px solid var(--border-color);
+  }
+  .hamburger-menu { display: block; font-size: 1.8rem; color: var(--text-color); background: none; border: none; cursor: pointer; z-index: 1001; }
+  .main-nav.is-open { display: block; }
+  .main-nav ul { flex-direction: column; align-items: center; gap: 0; }
+  .main-nav li { width: 100%; text-align: center; }
+  .main-nav a { display: block; padding: 1rem; border-bottom: 1px solid var(--border-color); }
+  .main-nav li:last-child a { border-bottom: none; }
 
-    .horizontal-timeline {
-      flex-direction: column;
-      align-items: flex-start;
-      padding-bottom: 0;
-      overflow-x: hidden; 
-      gap: 2rem;
+  .project-card { 
+    flex: 0 0 100%;
+    gap: 0;
+    scroll-snap-align: center; }
+  .slider-arrow { backdrop-filter:var(--border-color);   }
+  .project-cards {  scroll-snap-type: x mandatory;  gap: 0; }
+  .projects-slider-wrapper {  padding: 0; }
+  .hero-text {
+    width: 100%;
+    align-items: center; 
+    text-align: center; 
+  }
+
+  .body, html{
+  overflow-x: hidden;
+  width:100%;
+  }
+  .timeline-scroll-wrapper {
+      padding: 0 10px; 
+      margin: 0 auto; 
+  }
+  .timeline-scroll-container {
+      padding: 5px; 
+      overflow-x: hidden;
       scroll-snap-type: none;
-      width: 100%; 
-      min-width: auto; 
-    }
-
-    .timeline-line {
-        left: 35px;
-        right: auto;
-        width: 6px;
-        height: calc(100% - 1rem);
-        top:0; 
-        transform: none;
-    }
-
-    .timeline-h-item {
-        width: 100%;
-        margin-top: 0 !important;
-        margin-bottom: 0 !important;
-        margin-left: 0;
-        padding-left: 80px; 
-        text-align: left;
-        scroll-snap-align: none;   
-        display: block; 
-    }
-
-    .timeline-h-dot {
-        left: 35px; 
-        top: 15px;
-        transform: translateX(-50%);
-        position: absolute; 
-    }
-
-    .timeline-above-line .timeline-h-dot,
-    .timeline-below-line .timeline-h-dot {
-        top: 50px;
-        bottom: auto;
-    }
-
-    .timeline-h-content {
-        position: relative;
-        margin-top: 0px;
-        margin-left: 0;
-        padding: 1rem;
-        flex-grow: 0;
-        left: auto; 
-        bottom: auto;
-        top: auto;
-        width: auto; 
-    }
-
-    .timeline-above-line .timeline-h-content,
-    .timeline-below-line .timeline-h-content {
-        bottom: auto; 
-        top: auto;
-        margin-top: 10px;
-        margin-bottom: 0;
-        margin-left: 20px; 
-    }
-
-    .timeline-h-content ul li {
-      padding-left: 1rem;
-    }
-
-    .timeline-arrow {
-      display: none; 
-    }
+      width: 100%;
+      min-width: auto;
+      mask-image: none;
+      -webkit-mask-image: none;
+      min-height: auto;
+  }
+  .horizontal-timeline {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 0;
+    overflow-x: hidden; 
+    gap: 1.5rem;
+    scroll-snap-type: none;
+    width: 100%; 
+    min-width: auto; 
+    margin:0;
+  }
+  .timeline-line {
+      left: 35px;
+      right: auto;
+      width: 6px;
+      height: calc(100% - 1rem);
+      top:0; 
+      transform: none;
+  }
+  .timeline-h-item {
+      width: 100%;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      margin-left: 0;
+      padding-left: 80px; 
+      text-align: left;
+      scroll-snap-align: none;  
+      min-height: auto; 
+      height: auto;
+      display: block; 
+  }
+  .timeline-h-dot {
+      left: 35px; 
+      top: 15px;
+      transform: translateX(-50%);
+      position: absolute; 
+  }
+  .timeline-above-line .timeline-h-dot,
+  .timeline-below-line .timeline-h-dot {
+      top: 50px;
+      bottom: auto;
+  }
+  .timeline-h-content {
+      position: relative;
+      margin-top: 0px;
+      margin-left: 0;
+      padding: 1rem;
+      flex-grow: 0;
+      left: auto; 
+      bottom: auto;
+      top: auto;
+      width: auto; 
+  }
+  .timeline-above-line .timeline-h-content,
+  .timeline-below-line .timeline-h-content {
+      bottom: auto; 
+      top: auto;
+      margin-top: 10px;
+      margin-bottom: 0;
+      margin-left: 20px; 
+  }
+  .timeline-h-content ul li {
+    padding-left: 1rem;
+  }
+  .timeline-arrow {
+    display: none; 
+  }
 }
 
 .project-image.medhub-img{ background-image: url("images/medhub-img.png"); }
