@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     function setupUI() {
         const hamburger = document.querySelector('.hamburger-menu');
         const navMenu = document.querySelector('.main-nav');
@@ -56,7 +55,42 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+  
+    // --- Timeline Slider 
+    const timelineScrollContainer = document.querySelector('.timeline-section .timeline-scroll-container'); // Correctly targets the scrollable div
+        const timelinePrevButton = document.querySelector('.timeline-section .timeline-arrow.left');
+        const timelineNextButton = document.querySelector('.timeline-section .timeline-arrow.right');
 
+        if (timelineScrollContainer && timelinePrevButton && timelineNextButton) {
+            const timelineItem = timelineScrollContainer.querySelector('.timeline-h-item');
+            if (timelineItem) {
+                // Get gap from the .horizontal-timeline which holds the items
+                const horizontalTimeline = timelineScrollContainer.querySelector('.horizontal-timeline');
+                const timelineGap = horizontalTimeline ? parseInt(window.getComputedStyle(horizontalTimeline).gap, 10) : 120;
+                
+                const timelineScrollAmount = timelineItem.offsetWidth + timelineGap;
+
+                timelineNextButton.addEventListener('click', () => {
+                    const isAtEnd = timelineScrollContainer.scrollLeft + timelineScrollContainer.clientWidth >= timelineScrollContainer.scrollWidth - 1;
+                    if (isAtEnd) {
+                        timelineScrollContainer.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        timelineScrollContainer.scrollBy({ left: timelineScrollAmount, behavior: 'smooth' });
+                    }
+                });
+
+                timelinePrevButton.addEventListener('click', () => {
+                    const isAtStart = timelineScrollContainer.scrollLeft === 0;
+                    if (isAtStart) {
+                        timelineScrollContainer.scrollTo({ left: timelineScrollContainer.scrollWidth, behavior: 'smooth' });
+                    } else {
+                        timelineScrollContainer.scrollBy({ left: -timelineScrollAmount, behavior: 'smooth' });
+                    }
+                });
+            }
+        }
+    
+    
     function setupContactForm() {
         const contactForm = document.getElementById('contact-form');
         
@@ -65,11 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        (function() {
-            emailjs.init({
-                publicKey: "U0go_CQjNXXTWWcjH",
-            });
-        })(); 
+        emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
         
         const successModal = document.getElementById('success-modal');
         const closeModalBtn = successModal.querySelector('.close-button');
@@ -136,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
             submitBtn.innerHTML = 'Sending...';
 
-            emailjs.sendForm('service_pyvswzw', 'template_e0w03h2', this)
+            emailjs.sendForm(EMAILJS_CONFIG.SERVICE_ID, EMAILJS_CONFIG.TEMPLATE_ID, this)
                 .then(() => {
                     successModal.classList.remove('hidden');
                     contactForm.reset();
