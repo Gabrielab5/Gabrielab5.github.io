@@ -64,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (timelineScrollContainer && timelinePrevButton && timelineNextButton) {
             const timelineItem = timelineScrollContainer.querySelector('.timeline-h-item');
             if (timelineItem) {
-                // Get gap from the .horizontal-timeline which holds the items
                 const horizontalTimeline = timelineScrollContainer.querySelector('.horizontal-timeline');
                 const timelineGap = horizontalTimeline ? parseInt(window.getComputedStyle(horizontalTimeline).gap, 10) : 120;
                 
@@ -165,9 +164,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             submitBtn.disabled = true;
             submitBtn.innerHTML = 'Sending...';
+            console.log("Using EmailJS Public Key:", EMAILJS_PUBLIC_KEY);
 
-            emailjs.sendForm(EMAILJS_CONFIG.SERVICE_ID, EMAILJS_CONFIG.TEMPLATE_ID, this)
+            emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
                 .then(() => {
+                    placeholder="Your Message"
                     successModal.classList.remove('hidden');
                     contactForm.reset();
                 }, (error) => {
