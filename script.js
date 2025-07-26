@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+        emailjs.init(EMAILJS_PUBLIC_KEY);
         
         const successModal = document.getElementById('success-modal');
         const closeModalBtn = successModal.querySelector('.close-button');
@@ -164,7 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             submitBtn.disabled = true;
             submitBtn.innerHTML = 'Sending...';
-            console.log("Using EmailJS Public Key:", EMAILJS_PUBLIC_KEY);
 
             emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
                 .then(() => {
