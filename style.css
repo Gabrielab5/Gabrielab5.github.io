@@ -921,18 +921,37 @@ a:hover {
   .main-nav li:last-child a { border-bottom: none; }
 
   .project-card { 
-    flex: 0 0 100%;
-    gap: 0;
-    scroll-snap-align: center; 
+    flex-basis: 100%; 
+    scroll-snap-align: center;
   }
 
   .slider-arrow { 
-    backdrop-filter:var(--border-color); 
-    -webkit-backdrop-filter: blur(5px);  
+    display: flex;
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem; 
   }
+
+  .slider-arrow.prev-arrow { left: 5px; }
+  .slider-arrow.next-arrow { right: 5px; }
   
-  .project-cards {  scroll-snap-type: x mandatory;  gap: 0; }
-  .projects-slider-wrapper {  padding: 0; }
+  .slider-arrow:focus {
+    background-color: rgba(255, 255, 255, 0.1); 
+    outline: none; 
+  }
+
+  .slider-arrow:active {
+    background-color: var(--primary-color); 
+  }
+
+  .project-cards {  
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-left: 1rem;
+  }
+
+  .project-card:last-child {margin-right: 0; }
+  .projects-slider-wrapper {  padding: 0 0.5rem; }
 
   .hero-section {
     justify-content: center;  
