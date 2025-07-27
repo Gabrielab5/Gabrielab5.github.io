@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        emailjs.init('__EMAILJS_PUBLIC_KEY__');
+        emailjs.init('yzlDBiUW1zDE6a7SU'); // will be moved in the future
         
         const successModal = document.getElementById('success-modal');
         const closeModalBtn = successModal.querySelector('.close-button');
@@ -165,7 +165,8 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
             submitBtn.innerHTML = 'Sending...';
 
-            emailjs.sendForm('__EMAILJS_SERVICE_ID__', '__EMAILJS_TEMPLATE_ID__', this)
+            
+            emailjs.sendForm('service_pyvswzw','template_e0w03h2', this)// will be moved in the future
                 .then(() => {
                     placeholder="Your Message"
                     successModal.classList.remove('hidden');
