@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriela Brailovsky — Résumé</title>
+    <meta name="description" content="Résumé of Gabriela Brailovsky — Full Stack Developer & Salesforce Engineer.">
+    <link rel="icon" href="/images/g.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      :root{
+        --bg:#0a0f1a; --surface:#111827; --border:#1e293b;
+        --primary:#6366f1; --secondary:#10b981;
+        --text:#e2e8f0; --dim:#94a3b8; --white:#f8fafc;
+      }
+      *{margin:0;padding:0;box-sizing:border-box;}
+      body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;font-size:14px;}
+      h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;color:var(--white);line-height:1.2;}
+      a{color:var(--primary);text-decoration:none;}
+      a:hover{color:var(--secondary);}
+
+      .toolbar{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;
+        padding:0.8rem 1.2rem;background:rgba(10,15,26,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+        border-bottom:1px solid var(--border);}
+      .toolbar .tb-btn{display:inline-flex;align-items:center;gap:.45rem;border:1px solid var(--border);border-radius:50px;
+        padding:.5rem 1.1rem;color:var(--text);font-weight:600;font-size:.85rem;background:var(--surface);cursor:pointer;}
+      .tb-btn.primary{background:linear-gradient(90deg,var(--primary),var(--secondary));color:#fff;border:none;}
+      .tb-btn:hover{border-color:var(--primary);color:var(--white);}
+
+      .page{max-width:880px;margin:1.5rem auto;background:var(--surface);border:1px solid var(--border);
+        border-radius:16px;padding:2.4rem 2.6rem;}
+
+      header.cv-head{border-bottom:2px solid var(--border);padding-bottom:1.1rem;margin-bottom:1.3rem;}
+      .cv-head h1{font-size:2.1rem;}
+      .cv-title{color:var(--secondary);font-weight:600;font-size:1.05rem;margin:.15rem 0 .55rem;}
+      .cv-contact{font-size:.85rem;color:var(--dim);display:flex;flex-wrap:wrap;gap:.35rem .8rem;align-items:center;}
+      .cv-contact i{color:var(--primary);margin-right:.25rem;}
+
+      section.cv{margin-bottom:1.25rem;}
+      .cv h2{font-size:.95rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--primary);
+        border-bottom:1px solid var(--border);padding-bottom:.35rem;margin-bottom:.7rem;}
+      .entry{margin-bottom:.85rem;}
+      .entry-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.2rem;}
+      .entry-role{font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--white);font-size:1rem;}
+      .entry-org{color:var(--dim);font-weight:500;}
+      .entry-date{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--secondary);white-space:nowrap;}
+      .entry ul{list-style:none;margin-top:.3rem;}
+      .entry ul li{position:relative;padding-left:1rem;margin-bottom:.18rem;color:var(--dim);font-size:.88rem;}
+      .entry ul li::before{content:'▹';position:absolute;left:0;color:var(--secondary);}
+      .summary{color:var(--dim);font-size:.92rem;}
+      .skills-grid{display:grid;grid-template-columns:max-content 1fr;gap:.35rem 1rem;font-size:.88rem;}
+      .skills-grid dt{font-weight:600;color:var(--white);}
+      .skills-grid dd{color:var(--dim);}
+      .two-col{display:grid;grid-template-columns:1fr 1fr;gap:.2rem 1.5rem;}
+      .langs span{margin-right:1.2rem;color:var(--dim);}
+      .langs strong{color:var(--white);}
+
+      @media print{
+        @page{margin:14mm;}
+        body{background:#fff;color:#1e293b;font-size:11pt;}
+        h1,h2,h3,h4,.entry-role{color:#0f172a;}
+        a{color:#1e293b;}
+        .toolbar{display:none;}
+        .page{box-shadow:none;border:none;border-radius:0;margin:0;max-width:100%;padding:0;background:#fff;}
+        .cv-title{color:#4338ca;}
+        .cv h2{color:#4338ca;border-color:#cbd5e1;}
+        .cv-contact,.summary,.entry ul li,.entry-org,.skills-grid dd,.langs span{color:#334155;}
+        .entry-date{color:#059669;}
+        .entry ul li::before{color:#059669;}
+        .cv-head{border-color:#cbd5e1;}
+        section.cv{page-break-inside:avoid;}
+      }
+    </style>
+</head>
+<body>
+    <div class="toolbar">
+        <a href="index.html" class="tb-btn"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+        <button class="tb-btn primary" onclick="window.print()"><i class="fas fa-download"></i> Save as PDF</button>
+    </div>
+
+    <div class="page">
+        <header class="cv-head">
+            <h1>Gabriela Brailovsky</h1>
+            <div class="cv-title">Full Stack Developer &amp; Salesforce Engineer</div>
+            <div class="cv-contact">
+                <span><i class="fas fa-map-marker-alt"></i>Israel</span>
+                <span><i class="fas fa-phone"></i>+972 52 338 1612</span>
+                <span><i class="fas fa-envelope"></i>gabrielab5000@gmail.com</span>
+                <a href="https://github.com/Gabrielab5" target="_blank" rel="noopener"><i class="fab fa-github"></i>GitHub</a>
+                <a href="https://www.linkedin.com/in/gabrielabrail/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i>LinkedIn</a>
+                <a href="https://gabrielab5.github.io/" target="_blank" rel="noopener"><i class="fas fa-globe"></i>Portfolio</a>
+            </div>
+        </header>
+
+        <section class="cv">
+            <h2>Professional Summary</h2>
+            <p class="summary">Full Stack Developer &amp; Salesforce Engineer with a B.Sc. in Software Engineering and production experience spanning enterprise automation and AI systems. Builds Salesforce solutions (Apex, LWC, Flows), full-stack web apps (React, TypeScript, Node.js, Python/FastAPI, PostgreSQL), and AI/LLM integrations (OpenAI, Gemini, Claude &amp; agents). Comfortable owning features end-to-end — from architecture to deployment on AWS/GCP. Strong product instinct, agile mindset, and a relentless drive to learn. Fluent in Hebrew and English.</p>
+        </section>
+
+        <section class="cv">
+            <h2>Professional Experience</h2>
+
+            <div class="entry">
+                <div class="entry-top">
+                    <span><span class="entry-role">Full Stack Developer &amp; Salesforce Engineer</span> <span class="entry-org">· Dicomano</span></span>
+                    <span class="entry-date">Jan 2026 – Present</span>
+                </div>
+                <ul>
+                    <li>Develop and deploy Salesforce solutions using Apex, Flows, and Lightning Web Components.</li>
+                    <li>Build and integrate AI agents and automation workflows using Claude Code.</li>
+                    <li>Full-stack development with Node.js, React, and PostgreSQL; cloud infrastructure on AWS.</li>
+                    <li>Hebrew-language enterprise email automation and batch-processing systems.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-top">
+                    <span><span class="entry-role">Full Stack Developer — Client Project (BlackBox)</span> <span class="entry-org">· Freelance</span></span>
+                    <span class="entry-date">Sep 2025 – Dec 2025</span>
+                </div>
+                <ul>
+                    <li>Built a real-time AI camera monitoring system — FastAPI backend, React frontend, Docker.</li>
+                    <li>Integrated OpenAI Vision for intelligent alerting and Twilio for live WhatsApp notifications.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-top">
+                    <span><span class="entry-role">Software Engineer Intern</span> <span class="entry-org">· Papaya (Startup)</span></span>
+                    <span class="entry-date">Dec 2024 – Feb 2025</span>
+                </div>
+                <ul>
+                    <li>Developed production frontend features (Vue.js, Nuxt.js, TypeScript) and integrated GPT-based AI into real-time delivery and checkout systems.</li>
+                    <li>Implemented ML-based content recommendation that improved user engagement; collaborated in a fast-moving Agile, cross-functional team via Git/GitHub.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-top">
+                    <span><span class="entry-role">AI Systems Educator &amp; Private Tutor</span> <span class="entry-org">· Independent</span></span>
+                    <span class="entry-date">2024 – Jun 2025</span>
+                </div>
+                <ul>
+                    <li>Taught AI systems and tutored CS &amp; Math, fostering analytical thinking and problem-solving in learners of all levels.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="cv">
+            <h2>Key Projects</h2>
+
+            <div class="entry">
+                <div class="entry-top">
+                    <span><span class="entry-role">AI Crypto Advisor</span> <span class="entry-org">· Personal</span></span>
+                    <span class="entry-date">2026</span>
+                </div>
+                <ul><li>Personalized AI crypto dashboard (React + TypeScript) delivering live prices, news, and LLM-generated insights tuned to user profile. Deployed on Vercel.</li></ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-top">
+                    <span><span class="entry-role">EnerGenius — Electricity Optimization App</span> <span class="entry-org">· B.Sc. Final Project</span></span>
+                    <span class="entry-date">Dec 2024 – Jun 2025</span>
+                </div>
+                <ul>
+                    <li>Full-stack React + Python app with Supabase (PostgreSQL) and GCP deployment; RESTful APIs and CI/CD via GitHub Actions.</li>
+                    <li>ML forecasting (LSTM, Prophet, XGBoost, Genetic Algorithms) for usage prediction, anomaly detection, and personalized recommendations.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-top">
+                    <span><span class="entry-role">CookList — Smart Recipe &amp; Shopping List App</span> <span class="entry-org">· Team Project</span></span>
+                    <span class="entry-date">Sep 2025</span>
+                </div>
+                <ul><li>React + Vite + TailwindCSS, Node.js/Express, MongoDB Atlas; Hebrew recipe management with AI generation (Gemini) and a smart, department-sorted shopping list. Deployed on Render/Firebase.</li></ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-top">
+                    <span><span class="entry-role">IssuesFlow — Project &amp; Ticket Tracker</span> <span class="entry-org">· Full-Stack</span></span>
+                    <span class="entry-date">2025</span>
+                </div>
+                <ul><li>Spring Boot REST backend with a React + TypeScript SPA — tickets, mentions, dependencies, attachments, audit logs, soft deletion, and JWT auth in a Jira-inspired Kanban UI. Dockerized.</li></ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-top">
+                    <span><span class="entry-role">MedHub — Social Network for Doctors</span> <span class="entry-org">· Team Project</span></span>
+                    <span class="entry-date">2024</span>
+                </div>
+                <ul><li>Secure, scalable medical platform (React, Node.js, MongoDB); modular UI, optimized search (+30% navigation), CI/CD with GitHub Actions, integration testing with Jest.</li></ul>
+            </div>
+        </section>
+
+        <section class="cv">
+            <h2>Technical Skills</h2>
+            <dl class="skills-grid">
+                <dt>Salesforce</dt><dd>Apex, Lightning Web Components, Flows, Sales Cloud</dd>
+                <dt>Enterprise</dt><dd>SAP, SAP UI5 / Fiori</dd>
+                <dt>Languages</dt><dd>JavaScript, TypeScript, Python, Java, C#, SQL, HTML/CSS</dd>
+                <dt>Frontend</dt><dd>React, Vue.js / Nuxt.js, TailwindCSS</dd>
+                <dt>Backend &amp; APIs</dt><dd>Node.js/Express, FastAPI (async), Spring Boot, JPA/Hibernate, REST design, Webhooks</dd>
+                <dt>AI / LLM</dt><dd>OpenAI, Azure OpenAI, Gemini, Claude &amp; Claude Code, GPT-4 Vision, RAG, MCP, agents, TensorFlow, PyTorch</dd>
+                <dt>Databases</dt><dd>PostgreSQL, MongoDB, MySQL, Redis, Supabase</dd>
+                <dt>DevOps &amp; Cloud</dt><dd>AWS, GCP, Docker, CI/CD (GitHub Actions), Git</dd>
+                <dt>Practices</dt><dd>Agile/Scrum, TDD, Unit &amp; Integration testing (JUnit, Jest), OOP</dd>
+            </dl>
+        </section>
+
+        <section class="cv">
+            <h2>Education</h2>
+            <div class="entry">
+                <div class="entry-top">
+                    <span><span class="entry-role">B.Sc. in Software Engineering</span> <span class="entry-org">· Shamoon College of Engineering (SCE), Ashdod</span></span>
+                    <span class="entry-date">2021 – Jun 2025</span>
+                </div>
+            </div>
+            <div class="entry">
+                <div class="entry-top">
+                    <span><span class="entry-role">Full Stack Web Development Bootcamp</span> <span class="entry-org">· TechTroop &amp; Elevation</span></span>
+                    <span class="entry-date">Jun – Sep 2025</span>
+                </div>
+            </div>
+            <div class="entry">
+                <div class="entry-top">
+                    <span><span class="entry-role">Placeil Program — Participant</span> <span class="entry-org">· Tech Placement Program</span></span>
+                    <span class="entry-date">Sep – Oct 2025</span>
+                </div>
+            </div>
+            <div class="entry">
+                <div class="entry-top">
+                    <span><span class="entry-role">High School Diploma — 10-unit CS Track</span> <span class="entry-org">· Makif Gimel, Ashdod</span></span>
+                    <span class="entry-date">2014 – 2017</span>
+                </div>
+                <ul><li>Final project: a Chess game developed in C# — the spark that started it all.</li></ul>
+            </div>
+        </section>
+
+        <section class="cv">
+            <h2>Military Service</h2>
+            <div class="entry">
+                <div class="entry-top">
+                    <span><span class="entry-role">Combat Soldier &amp; Operational Driver</span> <span class="entry-org">· IDF — Bardelas Unit</span></span>
+                    <span class="entry-date">2018 – 2021</span>
+                </div>
+                <ul><li>Advanced infantry and operational driving training; leadership, resilience, and teamwork in high-pressure environments.</li></ul>
+            </div>
+        </section>
+
+        <section class="cv">
+            <h2>Languages</h2>
+            <p class="langs"><span><strong>Hebrew:</strong> Native</span><span><strong>English:</strong> Fluent</span><span><strong>Russian:</strong> Native</span></p>
+        </section>
+    </div>
+</body>
+</html>
