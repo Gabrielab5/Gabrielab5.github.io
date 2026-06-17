@@ -3,407 +3,579 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0f1a">
+
+    <title>Gabriela Brailovsky — Full Stack Developer & Salesforce Engineer</title>
+    <meta name="description" content="Gabriela Brailovsky — Full Stack Developer & Salesforce Engineer. Building intelligent enterprise automation with Salesforce, Apex, LWC, React, Node.js, AWS and AI agents.">
+    <meta name="author" content="Gabriela Brailovsky">
+    <meta name="keywords" content="Gabriela Brailovsky, Salesforce Developer, Apex, LWC, Full Stack Developer, React, Node.js, SAP, AI Engineer, Israel">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gabriela Brailovsky — Full Stack Developer & Salesforce Engineer">
+    <meta property="og:description" content="Building intelligent enterprise automation with Salesforce, React, Node.js, AWS and AI agents.">
+    <meta property="og:url" content="https://gabrielab5.github.io/">
+    <meta property="og:image" content="https://gabrielab5.github.io/images/my%20image.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gabriela Brailovsky — Full Stack Developer & Salesforce Engineer">
+    <meta name="twitter:description" content="Building intelligent enterprise automation with Salesforce, React, Node.js, AWS and AI agents.">
+    <meta name="twitter:image" content="https://gabrielab5.github.io/images/my%20image.png">
+
+    <link rel="canonical" href="https://gabrielab5.github.io/">
     <link rel="icon" href="/images/g.png" type="image/png">
-    <title>Gabriela Brailovsky - Software Engineer</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-</head>
 <body>
+    <!-- Scroll progress bar -->
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
-    <header class = "main-header">
-      <div class="container">
-       <a href="#home" class="logo">Gabriela Brailovsky</a>
-       <nav class="main-nav">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#timeline">TimeLine</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <button class="hamburger-menu" aria-label="Open navigation menu">&#9776;</button>
-      </div>
+    <!-- Open to work banner -->
+    <div class="open-banner" id="open-banner">
+        <span class="open-dot" aria-hidden="true"></span>
+        <span class="open-text">Open to new opportunities — Full Stack &amp; Salesforce roles</span>
+        <a href="#contact" class="open-cta">Let's talk</a>
+        <button class="open-close" id="open-close" aria-label="Dismiss banner">&times;</button>
+    </div>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="#home" class="logo">Gabriela<span class="logo-accent">.</span>Brailovsky</a>
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#timeline" class="nav-link">Timeline</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="hamburger-menu" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">&#9776;</button>
+            </div>
+        </div>
     </header>
 
     <main>
-    <section id="home" class="hero-section">
-        <div class = "container hero-container">
-          <div class="hero-text">
-              <h1><Strong> Software Engineer </Strong></h1>
-              <p>Hi, I'm Gabriela Brailovsky - a Software Engineer specializing in both frontend and backend development. I'm a highly motivated and detail-oriented Software Engineering student with hands-on experience in full-stack development, backend engineering, and AI-driven systems.</p>
-              <p>This website, which I designed and built from scratch, showcases more about me, my projects, and the work I’m passionate about. I combine academic excellence with practical problem-solving, a fast learning ability, and strong teamwork skills.</p>
-              <a href="#contact" class="btn" id="getInTouch">Get In Touch</a>
-          </div>
-        <div class="hero-photo"></div>
-      </div>
-    </section>
-   
-    <section id="about" class="about-section">
-      <div class="container">
-        <div class ="about-me"> 
-          <h2>About Me</h2>
-           <p>My journey into software engineering began in high school, culminating in a C# chess game project that ignited my passion for development. Now, with hands-on experience spanning Full Stack development, backend architectures, and engaging frontend interfaces, I am a versatile Software Engineer. I’m set to graduate with a B.Sc. in Software Engineering from Shamoon College of Engineering, fully prepared to apply my academic knowledge and strong problem-solving skills in a professional role.</p>
-          <p>As an engineer, my comprehensive passion for the field drives me to excel in three key areas: crafting aesthetically pleasing and functional user interfaces, architecting robust solutions to complex algorithmic challenges, and leveraging data to extract meaningful insights. I thrive in dynamic environments, confident in my ability to tackle any task required to see a project through to success. My professional approach is rooted in agile methodologies, with practical experience in Test-Driven Development (TDD), implementing Continuous Integration/Continuous Deployment (CI/CD) pipelines for streamlined delivery, and understanding scalable systems through Microservices and Domain-Driven Design (DDD).</p>
-          <p>My technical prowess is complemented by strong soft skills, making me a highly effective team member. I am a proactive and fast learner, consistently adapting to new technologies. My excellent communication skills are evident in collaborative work, where I actively participate in discussions, contribute to clear Pull Requests (PRs), and provide constructive feedback. I embrace problem-solving as a core challenge, quickly dissecting complex issues to deliver efficient solutions. My commitment to teamwork ensures a collaborative atmosphere, fostering collective success on every project.</p>
-          <p>Beyond coding, I am deeply committed to continuous personal and professional growth. In my free time, I avidly explore new technologies, delving into advancements in the tech world and AI, often catching up through concise TLDR summaries. I also engage in stock market research, enjoy challenging myself with chess, and prioritize daily fitness to maintain a healthy work-life balance. I am eager to begin my professional journey in an environment that fosters continuous improvement and career advancement, allowing me to fully realize my potential within a cohesive and supportive team culture.</p>
-      </div>
-          <div class="skills-container">
-            <div class="skills-section">
-              <h2>Technical Skills</h2>
-              <ul class="skills-list">
-                <li class="skill-item">
-                  <span class="skill-name">JavaScript</span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" style="width: 90%;"></div>
-                  </div>
-                </li>
-                <li class="skill-item">
-                  <span class="skill-name">React</span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" style="width: 75%;"></div>
-                  </div>
-                </li>
-                <li class="skill-item">
-                  <span class="skill-name">Node.js</span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" style="width: 85%;"></div>
-                  </div>
-                </li>
-                <li class="skill-item">
-                  <span class="skill-name">Python</span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" style="width: 80%;"></div>
-                  </div>
-                </li>
-                  <li class="skill-item">
-                  <span class="skill-name">Java</span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" style="width: 75%;"></div>
-                  </div>
-                </li>
-                <li class="skill-item">
-                  <span class="skill-name">TypeScript</span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" style="width: 75%;"></div>
-                  </div>
-                </li>
-                <li class="skill-item">
-                  <span class="skill-name">API Development</span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" style="width: 90%;"></div>
-                  </div>
-                </li>
-                 <li class="skill-item">
-                  <span class="skill-name">SQL (Postgres)</span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" style="width: 80%;"></div>
-                  </div>
-                </li>
-                 <li class="skill-item">
-                  <span class="skill-name">HTML/CSS</span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" style="width: 95%;"></div>
-                  </div>
-                </li>
-                <li class="skill-item">
-                  <span class="skill-name">Git/GitHub</span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" style="width: 95%;"></div>
-                  </div>
-                </li>
-                 <li class="skill-item">
-                  <span class="skill-name">C#</span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" style="width: 75%;"></div>
-                  </div>
-                </li>
-                <li class="skill-item">
-                  <span class="skill-name">NoSQL(MongoDB) </span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" style="width: 80%;"></div>
-                  </div>
-                </li>
-                <li class="skill-item">
-                  <span class="skill-name">Data Structures & Algorithms</span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" style="width: 97%;"></div>
-                  </div>
-                </li>
-                <li class="skill-item">
-                  <span class="skill-name">Unit & Integration Testing</span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" style="width: 89%;"></div>
-                  </div>
-                </li>
-              </ul>
-            </div>    
-         <div class="skills-section">
-            <h2>Soft Skills</h2>
-            <ul class="soft-skills-list">
-              <li>Team Collaboration</li>
-              <li>Responsive Design</li>
-              <li>Adaptability</li>
-              <li>Self-Learning</li>
-              <li>Critical Thinking</li>
-              <li>Communication</li>
-              <li>Creativity</li>
-              <li>Initiative & Proactiveness</li>
-              <li>Growth Mindset</li>
-              <li>Code Quality Focus</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-</section> <section id="timeline" class="timeline-section">
-        <div class="container timeline-scroll-wrapper"> <h2>My Journey</h2>
-            <button class="slider-arrow timeline-arrow left" aria-label="Previous item"><i class="fas fa-chevron-left"></i></button>
-            <button class="slider-arrow timeline-arrow right" aria-label="Next item"><i class="fas fa-chevron-right"></i></button>
-            
-            <div class="timeline-scroll-container"> 
-            <div class="horizontal-timeline">
-                <div class="timeline-line"></div> 
-
-                <div class="timeline-h-item timeline-above-line">
-                    <div class="timeline-h-dot">
-                        <i class="fas fa-school"></i> 
-                    </div>
-                    <div class="timeline-h-content">
-                        <h4>2014 - 2017</h4>
-                        <h3>High School Diploma</h3>
-                        <p>Intensive 10-unit Computer Science track; Final Project: Chess game development in C#.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-h-item timeline-below-line">
-                    <div class="timeline-h-dot">
-                        <i class="fas fa-hands-helping"></i> 
-                    </div>
-                    <div class="timeline-h-content">
-                        <h4>2015 - 2018</h4>
-                        <h3>Volunteer @ Aharai & Scouts</h3>
-                        <p>Engaged in leadership, community building, and educational activities, fostering teamwork and social responsibility.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-h-item timeline-above-line">
-                    <div class="timeline-h-dot">
-                        <i class="fas fa-handshake"></i> 
-                    </div>
-                    <div class="timeline-h-content">
-                        <h4>2017 - 2018</h4>
-                        <h3>Sales Representative</h3>
-                        <p>Developed strong interpersonal, negotiation, and problem-solving skills in a dynamic sales environment.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-h-item timeline-below-line">
-                    <div class="timeline-h-dot">
-                        <i class="fas fa-shield-alt"></i> 
-                    </div>
-                    <div class="timeline-h-content">
-                        <h4>2018 - 2021</h4>
-                        <h3>Combat Soldier & Driver @ IDF</h3>
-                        <p>Demonstrated resilience and teamwork in high-pressure operational environments.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-h-item timeline-above-line">
-                    <div class="timeline-h-dot">
-                        <i class="fas fa-university"></i> 
-                    </div>
-                    <div class="timeline-h-content">
-                        <h4>2021 - June 2025</h4>
-                        <h3>B.Sc. in Software Engineering @ SCE</h3>
-                        <p>Comprehensive academic foundation in software development, algorithms, and system architecture (GPA 84).</p>
-                    </div>
-                </div>
-
-                <div class="timeline-h-item timeline-below-line">
-                    <div class="timeline-h-dot">
-                        <i class="fas fa-user-tie"></i> 
-                    </div>
-                    <div class="timeline-h-content">
-                        <h4>2021 - 2025</h4>
-                        <h3>Security Officer & Team Manager</h3>
-                        <p>Managed teams in high-pressure environments, showcasing strong leadership and swift problem-solving abilities.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-h-item timeline-above-line">
-                    <div class="timeline-h-dot">
-                        <i class="fas fa-laptop-code"></i> 
-                    </div>
-                    <div class="timeline-h-content">
-                        <h4>2024 - 2025</h4>
-                        <h3>Junior Software Engineer @ Papaya Startup</h3>
-                        <p>Contributed to full-stack development (Vue.js, Node.js, Supabase), integrating advanced AI capabilities and real-time systems.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-h-item timeline-below-line">
-                    <div class="timeline-h-dot">
-                        <i class="fas fa-chalkboard-teacher"></i> 
-                    </div>
-                    <div class="timeline-h-content">
-                        <h4>2025 - Present</h4>
-                        <h3>AI Systems Educator & Private Tutor</h3>
-                        <p>Teaching AI systems and tutoring CS/Math, fostering analytical thinking and problem-solving in learners of all ages.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-h-item timeline-above-line">
-                    <div class="timeline-h-dot">
-                        <i class="fas fa-code-branch"></i> 
-                    </div>
-                    <div class="timeline-h-content">
-                        <h4>June 2025 - Present</h4>
-                        <h3>Full Stack Web Development Bootcamp @ Elevation</h3>
-                        <p>Intensive program focusing on modern full-stack methodologies and cutting-edge web technologies.</p>
-                    </div>
-                </div>
-              </div>
-            </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="My-Projects">
-            <div class="container">
-                <h2>My Projects</h2>
-                <div class="projects-slider-wrapper">
-                <button class="slider-arrow prev-arrow" aria-label="Previous project"><i class="fas fa-chevron-left"></i></button>
-                <div class="project-cards">
-                    <div class="project-card">
-                        <div class="project-image energenius-img"></div>
-                        <div class="project-info">
-                            <h3>EnerGenius- Energy Optimization Web Application</h3>
-                             <p>The EnerGenius project is a smart energy management platform designed to help users monitor, analyze, and optimize their electricity consumption. It enables users to upload consumption data—such as Excel files from their electricity provider—and receive personalized insights, forecasts, and energy-saving recommendations. The app includes features like consumption trend analysis, alert notifications for high usage, goal tracking, and actionable suggestions tailored to user behavior. With a user-friendly interface and a focus on data privacy, EnerGenius empowers households to take control of their energy use and reduce costs effectively.</p>
-                              <div class="project-tech-icons">
-                              <i class="fa-brands fa-react" title="React"></i>
-                              <i class="fa-brands fa-python" title="Python"></i>
-                              <i class="fa-solid fa-database" title="Supabase (PostgreSQL)"></i>
-                              <span class="tech-icon-text" title="TypeScript">TS</span>
-                              </div>
-                             <a href="https://github.com/Gabrielab5/EnerGenius-Web" target="_blank" class="btn btn-secondary">View Project</a>
+        <!-- ===== HERO ===== -->
+        <section id="home" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-text reveal">
+                    <p class="hero-eyebrow">Hi, I'm Gabriela Brailovsky</p>
+                    <h1>Full Stack Developer<br><span class="gradient-text">&amp; Salesforce Engineer</span></h1>
+                    <div class="terminal" aria-hidden="true">
+                        <div class="terminal-bar">
+                            <span class="t-dot t-red"></span><span class="t-dot t-yellow"></span><span class="t-dot t-green"></span>
+                            <span class="terminal-title">gabriela@dicomano: ~</span>
+                        </div>
+                        <div class="terminal-body">
+                            <span class="terminal-prompt">&gt;</span>
+                            <span id="typewriter"></span><span class="cursor">&#9608;</span>
                         </div>
                     </div>
-                    <div class="project-card">
-                        <div class="project-image movie-img"></div>
-                        <div class="project-info">
-                            <h3>The Popcorn Palace - Movie Booking System</h3>
-                             <p>The Popcorn Palace project is a Spring Boot-based web application designed to manage a movie booking system. It supports core features such as creating and retrieving movies, scheduling and validating showtimes without overlaps, and booking seats for showtimes while ensuring no duplicate reservations occur. The system is organized into clear layers: entities (like Movie, Showtime, and Booking), DTOs for request/response handling, controllers to manage RESTful API endpoints, and services for business logic. The application ensures robust data handling with input validation, exception management, and database integration via JPA repositories</p>
-                              <div class="project-tech-icons">
-                              <i class="fa-brands fa-java" title="Java"></i>
-                              <i class="fa-solid fa-leaf" title="Spring Boot"></i>
-                            </div>
-                             <a href="https://github.com/Gabrielab5/popcorn-palace" target="_blank" class="btn btn-secondary">View Project</a>
-                        </div>
+                    <p class="hero-desc">I build intelligent enterprise automation and full-stack web apps — from Salesforce Apex &amp; LWC to React, Node.js, PostgreSQL and AI agents.</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn">View My Work</a>
+                        <a href="#contact" class="btn btn-outline" id="getInTouch">Get In Touch</a>
                     </div>
-                    <div class="project-card">
-                        <div class="project-image medhub-img"></div>
-                        <div class="project-info">
-                            <h3>MedHub- Social Media Web Application</h3>
-                            <p>MedHub is a full-stack web application designed to serve as a social media platform for medical staff and professionals.
-                                The Frontend is built using React, offering an intuitive and user-friendly interface for users to interact, share updates, and connect with peers in the medical community.
-                                The Backend is developed with Node.js, responsible for handling API endpoints, business logic, and database operations to ensure secure and efficient data management.
-                                Together, these components deliver a seamless experience tailored for healthcare professionals to collaborate and communicate effectively. </p>
-                              <div class="project-tech-icons">
-                                <i class="fa-brands fa-react" title="React"></i>
-                                <i class="fa-brands fa-node-js" title="Node.js"></i>
-                                <i class="fa-solid fa-database" title="MongoDB"></i>
-                            </div>
-                              <a href="https://github.com/MedHubTeam/medhub-backend" target="_blank" class="btn btn-secondary">View Project</a>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-image vehicle-agency-img"></div>
-                        <div class="project-info">
-                            <h3>Vehicle Agency - Java</h3>
-                            <p>A comprehensive vehicle agency management system built with Java. This application handles inventory, sales, and customer data, providing a robust backend solution for a car dealership.</p>
-                              <div class="project-tech-icons">
-                              <i class="fa-brands fa-java" title="Java"></i>
-                            </div>
-                            <a href="https://github.com/Gabrielab5/Car-Agency-Project" target="_blank" class="btn btn-secondary">View Project</a>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-image menu-img"></div>
-                        <div class="project-info">
-                            <h3>Restaurant Menu App</h3>
-                            <p>A dynamic and responsive web application for displaying a restaurant menu. Built with a focus on a clean user interface and easy navigation for customers to browse through food items.</p>
-                            <div class="project-tech-icons">
-                              <i class="fa-brands fa-html5" title="HTML5"></i>
-                              <i class="fa-brands fa-css3-alt" title="CSS3"></i>
-                              <i class="fa-brands fa-js" title="JavaScript"></i>
-                            </div>
-                            <a href="https://github.com/Gabrielab5/restaurant-menu-app" target="_blank" class="btn btn-secondary">View Project</a>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-image dilithium-img"></div>
-                        <div class="project-info">
-                            <h3>Dilithium Signatures</h3>
-                            <p>An implementation of the CRYSTALS-Dilithium digital signature algorithm. This project explores post-quantum cryptography, providing a secure method for verifying digital communications.</p>
-                             <div class="project-tech-icons">
-                              <i class="fa-solid fa-shield-halved" title="Cryptography"></i>
-                              <i class="fa-brands fa-python" title="Python"></i>
-                            </div>
-                            <a href="https://github.com/Gabrielab5/dilithium_signatures" target="_blank" class="btn btn-secondary">View Project</a>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-image chess-img"></div>
-                        <div class="project-info">
-                            <h3>Chess in C++</h3>
-                            <p>A classic game of chess developed in C++. This project showcases object-oriented programming principles and game logic implementation, featuring a fully playable chess engine.</p>
-                            <div class="project-tech-icons">
-                             <span class="tech-icon-text" title="C++">C++</span>
-                            </div>
-                            <a href="https://github.com/Gabrielab5/chess-cpp" target="_blank" class="btn btn-secondary">View Project</a>
-                        </div>
-                    </div>
-                     <div class="project-card">
-                        <div class="project-image chat-img"></div>
-                        <div class="project-info">
-                            <h3>Secure Chat Collaboration</h3>
-                            <p>A secure chat application developed as a collaborative project. It focuses on end-to-end encryption to ensure private and safe communication between users.</p>
-                            <div class="project-tech-icons">
-                            <i class="fa-brands fa-node-js" title="Node.js"></i>
-                            <i class="fa-solid fa-shield-halved" title="Security"></i>
-                            <span class="tech-icon-text" title="TypeScript">TS</span>
-                          </div>
-                            <a href="https://github.com/hamodi15-code/SecureTalk" target="_blank" class="btn btn-secondary">View Project</a>
-                        </div>
-                    </div>
-                    </div>
-                  <button class="slider-arrow next-arrow" aria-label="Next project"><i class="fas fa-chevron-right"></i></button>
-                  </div>
+                </div>
+                <div class="hero-photo-wrap reveal">
+                    <div class="hero-glow" aria-hidden="true"></div>
+                    <img src="images/my image.png" alt="Portrait of Gabriela Brailovsky" class="hero-photo" width="380" height="380">
                 </div>
             </div>
-      </section>
+        </section>
 
-       <section id="resume" class="resume-section">
+        <!-- ===== GITHUB STATS BAR ===== -->
+        <section class="stats-section" aria-label="GitHub statistics">
             <div class="container">
-                <h2>Resume</h2>
-                <p>Feel free to download my resume to get a more detailed view of my skills and experience.</p>
-                <a href="Gabriela-Brailovsky-CV.docx" target="_blank" class="btn">Download CV <i class="fas fa-download"></i></a>
+                <div class="stats-bar reveal">
+                    <div class="stat">
+                        <i class="fab fa-github stat-icon"></i>
+                        <span class="stat-num" data-target="45" id="stat-repos">0</span>
+                        <span class="stat-label">Public Repos</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-code stat-icon"></i>
+                        <span class="stat-text" id="stat-lang">JavaScript</span>
+                        <span class="stat-label">Top Language</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-star stat-icon"></i>
+                        <span class="stat-num" data-target="3" id="stat-stars">0</span>
+                        <span class="stat-label">Total Stars</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-bolt stat-icon"></i>
+                        <span class="stat-text" id="stat-active">Jun 2026</span>
+                        <span class="stat-label">Last Active</span>
+                    </div>
+                </div>
             </div>
-          </section>
+        </section>
 
-        <section id="contact" class="Get-In-Touch">
+        <!-- ===== ABOUT ===== -->
+        <section id="about" class="about-section">
             <div class="container">
-                <h2>Get In Touch</h2>
+                <h2 class="section-title reveal">About Me</h2>
+                <div class="about-grid">
+                    <div class="about-me reveal">
+                        <p>I'm a Software Engineer specializing in full-stack development, Salesforce engineering, and AI-driven systems. My journey began with a high-school chess game in C# and grew into a B.Sc. in Software Engineering from Shamoon College of Engineering — and now into building enterprise automation in production.</p>
+                        <p>Today at <strong>Dicomano</strong> I develop and deploy Salesforce solutions with Apex, Flows and Lightning Web Components, integrate AI agents and automation workflows with Claude Code, and ship full-stack features across Node.js, React, PostgreSQL and AWS.</p>
+                        <p>I work with agile methodologies — TDD, CI/CD pipelines, microservices and domain-driven design — and care deeply about clean, maintainable code. I'm a fast learner who thrives in collaborative teams and enjoys turning complex problems into elegant, reliable solutions.</p>
+                        <div class="soft-skills">
+                            <h3>Soft Skills</h3>
+                            <ul class="soft-skills-list">
+                                <li>Team Collaboration</li>
+                                <li>Adaptability</li>
+                                <li>Self-Learning</li>
+                                <li>Critical Thinking</li>
+                                <li>Communication</li>
+                                <li>Initiative</li>
+                                <li>Growth Mindset</li>
+                                <li>Code Quality</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="skills-chart reveal">
+                        <h3>Technical Expertise</h3>
+                        <ul class="skill-bars">
+                            <li class="skill-row" data-level="88"><span class="skill-label">Salesforce (Apex · LWC · Flows)</span><span class="skill-track"><span class="skill-fill sf"></span></span><span class="skill-pct">88%</span></li>
+                            <li class="skill-row" data-level="78"><span class="skill-label">SAP (ABAP · UI5 · Fiori)</span><span class="skill-track"><span class="skill-fill sap"></span></span><span class="skill-pct">78%</span></li>
+                            <li class="skill-row" data-level="92"><span class="skill-label">JavaScript / TypeScript</span><span class="skill-track"><span class="skill-fill js"></span></span><span class="skill-pct">92%</span></li>
+                            <li class="skill-row" data-level="88"><span class="skill-label">React</span><span class="skill-track"><span class="skill-fill react"></span></span><span class="skill-pct">88%</span></li>
+                            <li class="skill-row" data-level="85"><span class="skill-label">Node.js</span><span class="skill-track"><span class="skill-fill node"></span></span><span class="skill-pct">85%</span></li>
+                            <li class="skill-row" data-level="90"><span class="skill-label">AI / LLM &amp; Agents</span><span class="skill-track"><span class="skill-fill ai"></span></span><span class="skill-pct">90%</span></li>
+                            <li class="skill-row" data-level="80"><span class="skill-label">DevOps / Cloud (AWS · Docker)</span><span class="skill-track"><span class="skill-fill devops"></span></span><span class="skill-pct">80%</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Tech marquee -->
+                <div class="marquee reveal" aria-label="Technology stack">
+                    <div class="marquee-track">
+                        <i class="devicon-salesforce-plain" title="Salesforce"></i>
+                        <i class="devicon-react-original" title="React"></i>
+                        <i class="devicon-nodejs-plain" title="Node.js"></i>
+                        <i class="devicon-typescript-plain" title="TypeScript"></i>
+                        <i class="devicon-javascript-plain" title="JavaScript"></i>
+                        <i class="devicon-postgresql-plain" title="PostgreSQL"></i>
+                        <i class="devicon-amazonwebservices-plain-wordmark" title="AWS"></i>
+                        <i class="devicon-java-plain" title="Java"></i>
+                        <i class="devicon-spring-plain" title="Spring"></i>
+                        <i class="devicon-python-plain" title="Python"></i>
+                        <i class="devicon-docker-plain" title="Docker"></i>
+                        <i class="devicon-git-plain" title="Git"></i>
+                        <i class="devicon-firebase-plain" title="Firebase"></i>
+                        <i class="devicon-vuejs-plain" title="Vue.js"></i>
+                        <i class="devicon-mongodb-plain" title="MongoDB"></i>
+                        <!-- duplicate for seamless loop -->
+                        <i class="devicon-salesforce-plain" title="Salesforce"></i>
+                        <i class="devicon-react-original" title="React"></i>
+                        <i class="devicon-nodejs-plain" title="Node.js"></i>
+                        <i class="devicon-typescript-plain" title="TypeScript"></i>
+                        <i class="devicon-javascript-plain" title="JavaScript"></i>
+                        <i class="devicon-postgresql-plain" title="PostgreSQL"></i>
+                        <i class="devicon-amazonwebservices-plain-wordmark" title="AWS"></i>
+                        <i class="devicon-java-plain" title="Java"></i>
+                        <i class="devicon-spring-plain" title="Spring"></i>
+                        <i class="devicon-python-plain" title="Python"></i>
+                        <i class="devicon-docker-plain" title="Docker"></i>
+                        <i class="devicon-git-plain" title="Git"></i>
+                        <i class="devicon-firebase-plain" title="Firebase"></i>
+                        <i class="devicon-vuejs-plain" title="Vue.js"></i>
+                        <i class="devicon-mongodb-plain" title="MongoDB"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TIMELINE ===== -->
+        <section id="timeline" class="timeline-section">
+            <div class="container">
+                <h2 class="section-title reveal">My Journey</h2>
+                <div class="vtimeline">
+                    <div class="vtimeline-line" aria-hidden="true"></div>
+
+                    <div class="vtimeline-item current reveal">
+                        <div class="vtimeline-dot pulse"><i class="fas fa-briefcase"></i></div>
+                        <div class="vtimeline-content">
+                            <span class="vt-period">January 2026 – Present</span>
+                            <h3>Full Stack Developer &amp; Salesforce Engineer</h3>
+                            <h4>Dicomano</h4>
+                            <ul>
+                                <li>Developed and deployed Salesforce solutions using Apex, Flows, and Lightning Web Components.</li>
+                                <li>Built and integrated AI agents and automation workflows using Claude Code.</li>
+                                <li>Full-stack web development with Node.js, React, and PostgreSQL.</li>
+                                <li>Cloud infrastructure and deployment on AWS.</li>
+                                <li>Hebrew-language enterprise email automation and batch processing systems.</li>
+                            </ul>
+                            <div class="vt-tags">
+                                <span class="vt-tag tag-sf">Salesforce</span>
+                                <span class="vt-tag tag-sf">Apex</span>
+                                <span class="vt-tag tag-sf">LWC</span>
+                                <span class="vt-tag tag-fs">JavaScript</span>
+                                <span class="vt-tag tag-fs">PostgreSQL</span>
+                                <span class="vt-tag tag-cloud">AWS</span>
+                                <span class="vt-tag tag-ai">AI Agents</span>
+                                <span class="vt-tag tag-ai">Claude Code</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vtimeline-item reveal">
+                        <div class="vtimeline-dot"><i class="fas fa-video"></i></div>
+                        <div class="vtimeline-content">
+                            <span class="vt-period">September 2025 – December 2025</span>
+                            <h3>Client Project — BlackBox</h3>
+                            <h4>Freelance / Client Engagement</h4>
+                            <p>Built BlackBox, a production-ready camera monitoring system with real-time AI alerting — FastAPI backend, React frontend, OpenAI Vision, Firebase, and Twilio WhatsApp notifications, fully containerized with Docker.</p>
+                            <div class="vt-tags">
+                                <span class="vt-tag tag-fs">FastAPI</span>
+                                <span class="vt-tag tag-fs">React</span>
+                                <span class="vt-tag tag-ai">AI Vision</span>
+                                <span class="vt-tag tag-cloud">Docker</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vtimeline-item reveal">
+                        <div class="vtimeline-dot"><i class="fas fa-rocket"></i></div>
+                        <div class="vtimeline-content">
+                            <span class="vt-period">September 2025 – October 2025</span>
+                            <h3>Placeil Program — Participant</h3>
+                            <h4>Tech Placement Program</h4>
+                            <p>Selected participant in the Placeil program, sharpening professional engineering skills, collaboration, and industry readiness.</p>
+                            <div class="vt-tags">
+                                <span class="vt-tag tag-default">Professional Development</span>
+                                <span class="vt-tag tag-default">Collaboration</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vtimeline-item reveal">
+                        <div class="vtimeline-dot"><i class="fas fa-code-branch"></i></div>
+                        <div class="vtimeline-content">
+                            <span class="vt-period">June 2025 – September 2025</span>
+                            <h3>Full Stack Web Development Bootcamp</h3>
+                            <h4>Elevation</h4>
+                            <p>Intensive program focusing on modern full-stack methodologies and cutting-edge web technologies.</p>
+                            <div class="vt-tags">
+                                <span class="vt-tag tag-fs">React</span>
+                                <span class="vt-tag tag-fs">Node.js</span>
+                                <span class="vt-tag tag-fs">TypeScript</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vtimeline-item reveal">
+                        <div class="vtimeline-dot"><i class="fas fa-chalkboard-teacher"></i></div>
+                        <div class="vtimeline-content">
+                            <span class="vt-period">2024 – June 2025</span>
+                            <h3>AI Systems Educator &amp; Private Tutor</h3>
+                            <h4>Independent</h4>
+                            <p>Teaching AI systems and tutoring CS/Math, fostering analytical thinking and problem-solving in learners of all ages.</p>
+                            <div class="vt-tags">
+                                <span class="vt-tag tag-ai">AI Systems</span>
+                                <span class="vt-tag tag-default">Education</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vtimeline-item reveal">
+                        <div class="vtimeline-dot"><i class="fas fa-laptop-code"></i></div>
+                        <div class="vtimeline-content">
+                            <span class="vt-period">2024 – 2025</span>
+                            <h3>Junior Software Engineer</h3>
+                            <h4>Papaya Startup</h4>
+                            <p>Contributed to full-stack development (Vue.js, Node.js, Supabase), integrating advanced AI capabilities and real-time systems.</p>
+                            <div class="vt-tags">
+                                <span class="vt-tag tag-fs">Vue.js</span>
+                                <span class="vt-tag tag-fs">Node.js</span>
+                                <span class="vt-tag tag-ai">AI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vtimeline-item reveal">
+                        <div class="vtimeline-dot"><i class="fas fa-university"></i></div>
+                        <div class="vtimeline-content">
+                            <span class="vt-period">2021 – June 2025</span>
+                            <h3>B.Sc. in Software Engineering</h3>
+                            <h4>Shamoon College of Engineering (SCE)</h4>
+                            <p>Comprehensive academic foundation in software development, algorithms, and system architecture (GPA 84).</p>
+                            <div class="vt-tags">
+                                <span class="vt-tag tag-default">Algorithms</span>
+                                <span class="vt-tag tag-default">System Design</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vtimeline-item reveal">
+                        <div class="vtimeline-dot"><i class="fas fa-user-tie"></i></div>
+                        <div class="vtimeline-content">
+                            <span class="vt-period">2021 – 2025</span>
+                            <h3>Security Officer &amp; Team Manager</h3>
+                            <h4>Security Sector</h4>
+                            <p>Managed teams in high-pressure environments, showcasing strong leadership and swift problem-solving abilities.</p>
+                            <div class="vt-tags">
+                                <span class="vt-tag tag-default">Leadership</span>
+                                <span class="vt-tag tag-default">Management</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vtimeline-item reveal">
+                        <div class="vtimeline-dot"><i class="fas fa-shield-alt"></i></div>
+                        <div class="vtimeline-content">
+                            <span class="vt-period">2018 – 2021</span>
+                            <h3>Combat Soldier &amp; Driver</h3>
+                            <h4>Israel Defense Forces</h4>
+                            <p>Demonstrated resilience and teamwork in high-pressure operational environments.</p>
+                            <div class="vt-tags">
+                                <span class="vt-tag tag-default">Teamwork</span>
+                                <span class="vt-tag tag-default">Resilience</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vtimeline-item reveal">
+                        <div class="vtimeline-dot"><i class="fas fa-handshake"></i></div>
+                        <div class="vtimeline-content">
+                            <span class="vt-period">2017 – 2018</span>
+                            <h3>Sales Representative</h3>
+                            <h4>Retail / Sales</h4>
+                            <p>Developed strong interpersonal, negotiation, and problem-solving skills in a fast-paced, target-driven sales environment.</p>
+                            <div class="vt-tags">
+                                <span class="vt-tag tag-default">Negotiation</span>
+                                <span class="vt-tag tag-default">Communication</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vtimeline-item reveal">
+                        <div class="vtimeline-dot"><i class="fas fa-hands-helping"></i></div>
+                        <div class="vtimeline-content">
+                            <span class="vt-period">2015 – 2018</span>
+                            <h3>Volunteer @ Aharai &amp; Scouts</h3>
+                            <h4>Community Leadership</h4>
+                            <p>Engaged in leadership, community building, and educational activities — fostering teamwork and social responsibility.</p>
+                            <div class="vt-tags">
+                                <span class="vt-tag tag-default">Leadership</span>
+                                <span class="vt-tag tag-default">Teamwork</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vtimeline-item reveal">
+                        <div class="vtimeline-dot"><i class="fas fa-school"></i></div>
+                        <div class="vtimeline-content">
+                            <span class="vt-period">2014 – 2017</span>
+                            <h3>High School Diploma</h3>
+                            <h4>10-unit Computer Science Track</h4>
+                            <p>Intensive CS track; final project: a Chess game developed in C# — the spark that started it all.</p>
+                            <div class="vt-tags">
+                                <span class="vt-tag tag-default">C#</span>
+                                <span class="vt-tag tag-default">Computer Science</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PROJECTS ===== -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2 class="section-title reveal">Featured Projects</h2>
+
+                <!-- Featured (top 3) -->
+                <div class="featured-grid">
+                    <article class="featured-card reveal pattern-1">
+                        <div class="featured-glow" aria-hidden="true"></div>
+                        <div class="card-thumb thumb-ai" role="img" aria-label="AI Crypto Advisor screenshot" style="background-image:url('images/snap-ai-crypto.png')"><i class="fas fa-robot"></i></div>
+                        <div class="featured-head">
+                            <i class="fas fa-robot featured-icon"></i>
+                            <h3>AI Crypto Advisor</h3>
+                        </div>
+                        <p>A personalized crypto investor dashboard powered by AI — pick your assets and investor profile, then get live prices, news, and AI-generated insights tuned to your style.</p>
+                        <div class="tech-pills">
+                            <span class="pill">TypeScript</span><span class="pill">React</span><span class="pill">AI / LLM</span><span class="pill">Vercel</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://ai-crypto-advisor-olive.vercel.app" target="_blank" rel="noopener" class="btn btn-sm">Live Demo <i class="fas fa-up-right-from-square"></i></a>
+                            <a href="https://github.com/Gabrielab5/AI-Crypto-advisor" target="_blank" rel="noopener" class="btn btn-sm btn-outline"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </article>
+
+                    <article class="featured-card reveal pattern-2">
+                        <div class="featured-glow" aria-hidden="true"></div>
+                        <div class="card-thumb thumb-energy" role="img" aria-label="EnerGenius screenshot" style="background-image:url('images/snap-energenius.png'), url('images/energenius-img.png')"><i class="fas fa-bolt"></i></div>
+                        <div class="featured-head">
+                            <i class="fas fa-bolt featured-icon"></i>
+                            <h3>EnerGenius</h3>
+                        </div>
+                        <p>A web platform that helps homeowners analyze, forecast and optimize electricity consumption — with real-time visualization and personalized energy-saving recommendations.</p>
+                        <div class="tech-pills">
+                            <span class="pill">TypeScript</span><span class="pill">React</span><span class="pill">Firebase</span><span class="pill">Cloud</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://energenius-9908d.web.app/" target="_blank" rel="noopener" class="btn btn-sm">Live Demo <i class="fas fa-up-right-from-square"></i></a>
+                            <a href="https://github.com/Gabrielab5/EnerGenius-Web" target="_blank" rel="noopener" class="btn btn-sm btn-outline"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </article>
+
+                    <article class="featured-card reveal pattern-3">
+                        <div class="featured-glow" aria-hidden="true"></div>
+                        <div class="card-thumb thumb-fallback thumb-issues" aria-hidden="true"><i class="fas fa-diagram-project"></i></div>
+                        <div class="featured-head">
+                            <i class="fas fa-diagram-project featured-icon"></i>
+                            <h3>IssuesFlow</h3>
+                        </div>
+                        <p>A Spring Boot REST backend with a React + TypeScript SPA for project &amp; ticket tracking — users, mentions, dependencies, audit logs, soft deletion and JWT auth in a Jira-inspired Kanban UI.</p>
+                        <div class="tech-pills">
+                            <span class="pill">Java</span><span class="pill">Spring Boot</span><span class="pill">React</span><span class="pill">Docker</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://github.com/Gabrielab5/IssuesFlow" target="_blank" rel="noopener" class="btn btn-sm"><i class="fab fa-github"></i> View Project</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Standard (next 5) -->
+                <h2 class="section-subtitle reveal">More Highlights</h2>
+                <div class="standard-grid">
+                    <article class="std-card reveal">
+                        <div class="card-thumb thumb-blckbx" role="img" aria-label="BlackBox screenshot" style="background-image:url('images/snap-blckbx.png')"><i class="fas fa-video"></i></div>
+                        <h3>BlackBox</h3>
+                        <p>Production-ready camera monitoring system with real-time AI alerting — FastAPI + React, OpenAI Vision, Firebase and Twilio WhatsApp alerts, fully containerized with Docker.</p>
+                        <div class="tech-pills"><span class="pill">Python</span><span class="pill">FastAPI</span><span class="pill">Docker</span><span class="pill">AI Vision</span></div>
+                        <div class="card-links">
+                            <a href="https://camera-monitoring-system-dccc8.web.app/" target="_blank" rel="noopener" class="card-link">Live <i class="fas fa-up-right-from-square"></i></a>
+                            <a href="https://github.com/Gabrielab5/BlckBx" target="_blank" rel="noopener" class="card-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </article>
+
+                    <article class="std-card reveal">
+                        <div class="card-thumb thumb-fallback thumb-sap" aria-hidden="true"><i class="fas fa-clock"></i></div>
+                        <h3>SAP Employee Time Mgmt</h3>
+                        <p>An SAP UI5 / Fiori application for employee time tracking with start/stop logging, built on an ABAP OnPremise OData service.</p>
+                        <div class="tech-pills"><span class="pill">SAP UI5</span><span class="pill">Fiori</span><span class="pill">OData</span><span class="pill">JavaScript</span></div>
+                        <div class="card-links">
+                            <a href="https://github.com/Gabrielab5/sap-ui5-employee-time-management" target="_blank" rel="noopener" class="card-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </article>
+
+                    <article class="std-card reveal">
+                        <div class="card-thumb thumb-cooklist" role="img" aria-label="CookList screenshot" style="background-image:url('images/snap-cooklist.png')"><i class="fas fa-utensils"></i></div>
+                        <h3>CookList</h3>
+                        <p>A React recipe and cooking-list application with authentication and a clean, responsive interface, deployed to Render.</p>
+                        <div class="tech-pills"><span class="pill">React</span><span class="pill">JavaScript</span><span class="pill">Vite</span></div>
+                        <div class="card-links">
+                            <a href="https://cooklist-frontend.onrender.com/" target="_blank" rel="noopener" class="card-link">Live <i class="fas fa-up-right-from-square"></i></a>
+                            <a href="https://github.com/Gabrielab5/CookList-frontend" target="_blank" rel="noopener" class="card-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </article>
+
+                    <article class="std-card reveal">
+                        <div class="card-thumb thumb-quicknotes" role="img" aria-label="QuickNotes screenshot" style="background-image:url('images/snap-quicknotes.png')"><i class="fas fa-note-sticky"></i></div>
+                        <h3>QuickNotes</h3>
+                        <p>A fast React notes app — create, edit and delete notes with persistent storage, category filtering and search.</p>
+                        <div class="tech-pills"><span class="pill">React</span><span class="pill">JavaScript</span><span class="pill">LocalStorage</span></div>
+                        <div class="card-links">
+                            <a href="https://gabrielab5.github.io/QuickNotes/" target="_blank" rel="noopener" class="card-link">Live <i class="fas fa-up-right-from-square"></i></a>
+                            <a href="https://github.com/Gabrielab5/QuickNotes" target="_blank" rel="noopener" class="card-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </article>
+
+                    <article class="std-card reveal">
+                        <div class="card-thumb thumb-tweeter" role="img" aria-label="Tweeter 2.0 screenshot" style="background-image:url('images/snap-tweeter.png')"><i class="fab fa-twitter"></i></div>
+                        <h3>Tweeter 2.0</h3>
+                        <p>A Twitter-like social app built with React + Vite — user authentication via Supabase, infinite scrolling, profiles and persistent data.</p>
+                        <div class="tech-pills"><span class="pill">React</span><span class="pill">Vite</span><span class="pill">Supabase</span></div>
+                        <div class="card-links">
+                            <a href="https://gabrielab5.github.io/Tweeter-2.0" target="_blank" rel="noopener" class="card-link">Live <i class="fas fa-up-right-from-square"></i></a>
+                            <a href="https://github.com/Gabrielab5/Tweeter-2.0" target="_blank" rel="noopener" class="card-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- More projects accordion -->
+                <div class="more-projects reveal">
+                    <button class="more-toggle" id="more-toggle" aria-expanded="false" aria-controls="more-list">
+                        <span><i class="fas fa-folder-open"></i> + 7 more projects</span>
+                        <i class="fas fa-chevron-down more-chevron"></i>
+                    </button>
+                    <div class="more-list" id="more-list" hidden>
+                        <a href="https://github.com/Gabrielab5/business-licensing-generation-system-" target="_blank" rel="noopener" class="more-item">
+                            <i class="fas fa-file-contract"></i>
+                            <div><strong>Business Licensing System</strong><span>AI-powered licensing-report generator for Israeli food establishments. Python · TypeScript</span></div>
+                        </a>
+                        <a href="https://github.com/Gabrielab5/dilithium_signatures" target="_blank" rel="noopener" class="more-item">
+                            <i class="fas fa-shield-halved"></i>
+                            <div><strong>Dilithium Signatures</strong><span>Post-quantum digital signature algorithm (key-gen, signing, verification). Python</span></div>
+                        </a>
+                        <a href="https://github.com/Gabrielab5/popcorn-palace" target="_blank" rel="noopener" class="more-item">
+                            <i class="fas fa-film"></i>
+                            <div><strong>Popcorn Palace</strong><span>Spring Boot REST API for movies, showtimes &amp; bookings with full validation. Java</span></div>
+                        </a>
+                        <a href="https://github.com/Gabrielab5/Car-Agency-Project" target="_blank" rel="noopener" class="more-item">
+                            <i class="fas fa-car"></i>
+                            <div><strong>Vehicle Agency</strong><span>Multithreaded vehicle dealership management system (land/water/air). Java</span></div>
+                        </a>
+                        <a href="https://github.com/Gabrielab5/Recipes-Api" target="_blank" rel="noopener" class="more-item">
+                            <i class="fas fa-bowl-food"></i>
+                            <div><strong>Recipes API</strong><span>Recipe application with a RESTful API backend. JavaScript</span></div>
+                        </a>
+                        <a href="https://github.com/Gabrielab5/Titanic-Survival-Prediction-using-Bagging" target="_blank" rel="noopener" class="more-item">
+                            <i class="fas fa-chart-line"></i>
+                            <div><strong>Titanic Survival Prediction</strong><span>Machine-learning classifier using bagging ensembles. Python</span></div>
+                        </a>
+                        <a href="https://github.com/Gabrielab5/Stock-Exchange-Project" target="_blank" rel="noopener" class="more-item">
+                            <i class="fas fa-arrow-trend-up"></i>
+                            <div><strong>Stock Exchange</strong><span>Multipage stock-exchange data website. JavaScript</span></div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="github-cta reveal">
+                    <a href="https://github.com/Gabrielab5" target="_blank" rel="noopener" class="btn btn-outline"><i class="fab fa-github"></i> See all on GitHub</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== RESUME ===== -->
+        <section id="resume" class="resume-section">
+            <div class="container reveal">
+                <h2 class="section-title">Résumé</h2>
+                <p>Want the full picture? View my interactive résumé or download it as a PDF for a detailed look at my skills and experience.</p>
+                <div class="resume-buttons">
+                    <a href="resume.html" class="btn">View Résumé <i class="fas fa-up-right-from-square"></i></a>
+                    <a href="Gabriela-Brailovsky-Resume.pdf" download class="btn btn-outline">Download PDF <i class="fas fa-download"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CONTACT ===== -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title reveal">Get In Touch</h2>
                 <div class="contact-content">
-                    <form class="contact-form" id="contact-form">
+                    <form class="contact-form reveal" id="contact-form">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>                       
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
@@ -415,18 +587,19 @@
                             <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
                             <span class="error-message" id="message-error"></span>
                         </div>
-                        <button type="submit" class="btn" id="submit-btn">Send Message <i class="fas fa-paper-plane"></i> </button>
+                        <button type="submit" class="btn" id="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
                     </form>
-                    <div class="contact-info">
+                    <div class="contact-info reveal">
                         <h3>Contact Information</h3>
                         <ul class="contact-info-list">
                             <li><a href="mailto:gabrielab5000@gmail.com"><i class="fas fa-envelope"></i> gabrielab5000@gmail.com</a></li>
-                            <li><a href="tel:+972523381612"><i class="fas fa-phone"></i> tel: +972 52 338 1612</a></li>
+                            <li><a href="tel:+972523381612"><i class="fas fa-phone"></i> +972 52 338 1612</a></li>
                             <li><i class="fas fa-map-marker-alt"></i> Central District, Israel</li>
                         </ul>
                         <div class="social-icons">
-                            <a href="https://www.linkedin.com/in/gabrielabrail/" target="_blank" class="social-icon" aria-label="LinkedIn"> <i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://github.com/Gabrielab5" target="_blank" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/gabrielabrail/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://github.com/Gabrielab5" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://gabrielab5.github.io/" target="_blank" rel="noopener" class="social-icon" aria-label="Portfolio"><i class="fas fa-globe"></i></a>
                         </div>
                     </div>
                 </div>
@@ -434,32 +607,34 @@
         </section>
     </main>
 
-       <footer class="footer">
+    <footer class="footer">
         <div class="container">
-            <h3>HIRE ME TO UNLOCK MY FULL POTENTIAL!</h3>
-            <p>&copy; 2025 Gabriela Brailovsky. All rights reserved.</p>
+            <h3>Let's build something great together.</h3>
+            <p>&copy; 2026 Gabriela Brailovsky. Designed &amp; built from scratch.</p>
         </div>
     </footer>
 
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
     <div id="success-modal" class="modal-overlay hidden">
         <div class="modal">
-            <button class="close-button">&times;</button>
+            <button class="close-button" aria-label="Close">&times;</button>
             <i class="fas fa-check-circle success-icon"></i>
             <h3>Message sent successfully!</h3>
-            <p>We'll be in touch :)</p>
+            <p>Thanks for reaching out — I'll be in touch soon :)</p>
         </div>
     </div>
 
     <div id="error-modal" class="modal-overlay hidden">
         <div class="modal">
-            <button class="close-button">&times;</button>
-            <i class="fas fa-times-circle error-icon"></i> <h3>Message failed to send!</h3>
+            <button class="close-button" aria-label="Close">&times;</button>
+            <i class="fas fa-times-circle error-icon"></i>
+            <h3>Message failed to send!</h3>
             <p id="error-message-text">Please check your internet connection or try again later.</p>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="script.js" defer></script>
-
 </body>
 </html>
