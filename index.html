@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0a0f1a">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#05070f" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#eef1f8" media="(prefers-color-scheme: light)">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <title>Gabriela Brailovsky — Full Stack Developer & Salesforce Engineer</title>
     <meta name="description" content="Gabriela Brailovsky — Full Stack Developer & Salesforce Engineer. Building intelligent enterprise automation with Salesforce, Apex, LWC, React, Node.js, AWS and AI agents.">
@@ -24,99 +27,147 @@
     <meta name="twitter:image" content="https://gabrielab5.github.io/images/my%20image.png">
 
     <link rel="canonical" href="https://gabrielab5.github.io/">
-    <link rel="icon" href="/images/g.png" type="image/png">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Apply saved theme before paint to avoid a flash -->
+    <script>
+      try { if (localStorage.getItem('theme') === 'light') document.documentElement.setAttribute('data-theme', 'light'); } catch (e) {}
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Scroll progress bar -->
-    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Open to work banner -->
-    <div class="open-banner" id="open-banner">
-        <span class="open-dot" aria-hidden="true"></span>
-        <span class="open-text">Open to new opportunities — Full Stack &amp; Salesforce roles</span>
-        <a href="#contact" class="open-cta">Let's talk</a>
-        <button class="open-close" id="open-close" aria-label="Dismiss banner">&times;</button>
+    <!-- Ambient wallpaper (gives the glass something to refract) -->
+    <div class="ambient" aria-hidden="true">
+        <span class="blob b1"></span>
+        <span class="blob b2"></span>
+        <span class="blob b3"></span>
+        <span class="blob b4"></span>
+        <span class="grain"></span>
     </div>
 
-    <header class="main-header">
-        <div class="container">
-            <a href="#home" class="logo">Gabriela<span class="logo-accent">.</span>Brailovsky</a>
-            <nav class="main-nav" id="main-nav">
-                <ul>
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#timeline" class="nav-link">Timeline</a></li>
-                    <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="header-actions">
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme">
-                    <i class="fas fa-moon"></i>
+    <!-- Scroll progress -->
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+    <!-- ===== Floating glass navigation ===== -->
+    <header class="island-wrap">
+        <nav class="island glass" id="main-nav" aria-label="Primary">
+            <a href="#home" class="island-logo" aria-label="Gabriela Brailovsky — home">
+                <img src="images/favicon.png" alt="" width="28" height="28">
+                <span>Gabriela</span>
+            </a>
+            <ul class="island-links">
+                <li class="nav-indicator" id="nav-indicator" aria-hidden="true"></li>
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#timeline" class="nav-link">Journey</a></li>
+                <li><a href="#projects" class="nav-link">Work</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="island-actions">
+                <button class="icon-btn spotlight-trigger" id="spotlight-open" aria-label="Search (Ctrl K)">
+                    <i class="fas fa-magnifying-glass"></i><kbd class="kbd-hint">⌘K</kbd>
                 </button>
-                <button class="hamburger-menu" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">&#9776;</button>
+                <button class="ios-switch" id="theme-toggle" role="switch" aria-checked="false" aria-label="Light mode">
+                    <span class="ios-switch-knob"><i class="fas fa-moon"></i></span>
+                </button>
             </div>
-        </div>
+        </nav>
     </header>
 
-    <main>
+    <!-- ===== Mobile tab bar ===== -->
+    <nav class="tab-bar glass" aria-label="Sections">
+        <a href="#home" class="tab nav-link"><i class="fas fa-house"></i><span>Home</span></a>
+        <a href="#about" class="tab nav-link"><i class="fas fa-user"></i><span>About</span></a>
+        <a href="#timeline" class="tab nav-link"><i class="fas fa-route"></i><span>Journey</span></a>
+        <a href="#projects" class="tab nav-link"><i class="fas fa-layer-group"></i><span>Work</span></a>
+        <a href="#contact" class="tab nav-link"><i class="fas fa-paper-plane"></i><span>Contact</span></a>
+    </nav>
+
+    <main id="main">
         <!-- ===== HERO ===== -->
         <section id="home" class="hero-section">
             <div class="container hero-container">
                 <div class="hero-text reveal">
+                    <a href="#contact" class="status-pill glass">
+                        <span class="open-dot" aria-hidden="true"></span>
+                        Open to new opportunities
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
                     <p class="hero-eyebrow">Hi, I'm Gabriela Brailovsky</p>
                     <h1>Full Stack Developer<br><span class="gradient-text">&amp; Salesforce Engineer</span></h1>
-                    <div class="terminal" aria-hidden="true">
+                    <p class="hero-desc">I build intelligent enterprise automation and full-stack web apps — from Salesforce Apex &amp; LWC to React, Node.js, PostgreSQL and AI agents.</p>
+
+                    <div class="terminal glass" aria-hidden="true">
                         <div class="terminal-bar">
                             <span class="t-dot t-red"></span><span class="t-dot t-yellow"></span><span class="t-dot t-green"></span>
                             <span class="terminal-title">gabriela@dicomano: ~</span>
                         </div>
                         <div class="terminal-body">
-                            <span class="terminal-prompt">&gt;</span>
-                            <span id="typewriter"></span><span class="cursor">&#9608;</span>
+                            <span class="terminal-prompt">❯</span>
+                            <span id="typewriter"></span><span class="cursor"></span>
                         </div>
                     </div>
-                    <p class="hero-desc">I build intelligent enterprise automation and full-stack web apps — from Salesforce Apex &amp; LWC to React, Node.js, PostgreSQL and AI agents.</p>
+
                     <div class="hero-buttons">
-                        <a href="#projects" class="btn">View My Work</a>
-                        <a href="#contact" class="btn btn-outline" id="getInTouch">Get In Touch</a>
+                        <a href="#projects" class="btn magnetic">View My Work <i class="fas fa-arrow-right"></i></a>
+                        <a href="#contact" class="btn btn-glass magnetic" id="getInTouch">Get In Touch</a>
                     </div>
                 </div>
-                <div class="hero-photo-wrap reveal">
-                    <div class="hero-glow" aria-hidden="true"></div>
-                    <img src="images/my image.png" alt="Portrait of Gabriela Brailovsky" class="hero-photo" width="380" height="380">
+
+                <div class="hero-visual reveal" id="hero-visual">
+                    <div class="portrait-card glass tilt">
+                        <img src="images/portrait.webp" alt="Portrait of Gabriela Brailovsky" class="hero-photo" width="360" height="344" fetchpriority="high">
+                        <div class="portrait-caption">
+                            <div>
+                                <strong>Gabriela Brailovsky</strong>
+                                <span>Software Engineer · Israel</span>
+                            </div>
+                            <span class="verified" title="Currently working"><i class="fas fa-circle-check"></i></span>
+                        </div>
+                    </div>
+                    <div class="float-chip glass chip-1" data-depth="18"><i class="fab fa-salesforce"></i> Salesforce</div>
+                    <div class="float-chip glass chip-2" data-depth="-14"><i class="fas fa-wand-magic-sparkles"></i> AI Agents</div>
+                    <div class="float-chip glass chip-3" data-depth="10"><i class="fab fa-react"></i> React · Node</div>
+                    <div class="now-widget glass" data-depth="-22">
+                        <span class="widget-label"><i class="fas fa-briefcase"></i> Now</span>
+                        <strong>Dicomano</strong>
+                        <span>Full Stack &amp; Salesforce</span>
+                    </div>
                 </div>
             </div>
+            <a href="#about" class="scroll-cue" aria-label="Scroll to About"><span></span></a>
         </section>
 
-        <!-- ===== GITHUB STATS BAR ===== -->
+        <!-- ===== GITHUB STATS (widgets) ===== -->
         <section class="stats-section" aria-label="GitHub statistics">
             <div class="container">
-                <div class="stats-bar reveal">
-                    <div class="stat">
-                        <i class="fab fa-github stat-icon"></i>
+                <div class="stats-bar">
+                    <div class="stat widget glass reveal spotlight">
+                        <span class="widget-icon wi-indigo"><i class="fab fa-github"></i></span>
                         <span class="stat-num" data-target="45" id="stat-repos">0</span>
                         <span class="stat-label">Public Repos</span>
                     </div>
-                    <div class="stat">
-                        <i class="fas fa-code stat-icon"></i>
+                    <div class="stat widget glass reveal spotlight">
+                        <span class="widget-icon wi-amber"><i class="fas fa-code"></i></span>
                         <span class="stat-text" id="stat-lang">JavaScript</span>
                         <span class="stat-label">Top Language</span>
                     </div>
-                    <div class="stat">
-                        <i class="fas fa-star stat-icon"></i>
+                    <div class="stat widget glass reveal spotlight">
+                        <span class="widget-icon wi-pink"><i class="fas fa-star"></i></span>
                         <span class="stat-num" data-target="3" id="stat-stars">0</span>
                         <span class="stat-label">Total Stars</span>
                     </div>
-                    <div class="stat">
-                        <i class="fas fa-bolt stat-icon"></i>
+                    <div class="stat widget glass reveal spotlight">
+                        <span class="widget-icon wi-green"><i class="fas fa-bolt"></i></span>
                         <span class="stat-text" id="stat-active">Jun 2026</span>
                         <span class="stat-label">Last Active</span>
                     </div>
@@ -127,9 +178,12 @@
         <!-- ===== ABOUT ===== -->
         <section id="about" class="about-section">
             <div class="container">
-                <h2 class="section-title reveal">About Me</h2>
+                <header class="section-head reveal">
+                    <span class="section-kicker">About</span>
+                    <h2 class="section-title">Engineering with purpose</h2>
+                </header>
                 <div class="about-grid">
-                    <div class="about-me reveal">
+                    <div class="about-me glass reveal spotlight">
                         <p>I'm a Software Engineer specializing in full-stack development, Salesforce engineering, and AI-driven systems. My journey began with a high-school chess game in C# and grew into a B.Sc. in Software Engineering from Shamoon College of Engineering — and now into building enterprise automation in production.</p>
                         <p>Today at <strong>Dicomano</strong> I develop and deploy Salesforce solutions with Apex, Flows and Lightning Web Components, integrate AI agents and automation workflows with Claude Code, and ship full-stack features across Node.js, React, PostgreSQL and AWS.</p>
                         <p>I work with agile methodologies — TDD, CI/CD pipelines, microservices and domain-driven design — and care deeply about clean, maintainable code. I'm a fast learner who thrives in collaborative teams and enjoys turning complex problems into elegant, reliable solutions.</p>
@@ -148,22 +202,22 @@
                         </div>
                     </div>
 
-                    <div class="skills-chart reveal">
+                    <div class="skills-chart glass reveal spotlight">
                         <h3>Technical Expertise</h3>
                         <ul class="skill-bars">
-                            <li class="skill-row" data-level="88"><span class="skill-label">Salesforce (Apex · LWC · Flows)</span><span class="skill-track"><span class="skill-fill sf"></span></span><span class="skill-pct">88%</span></li>
-                            <li class="skill-row" data-level="78"><span class="skill-label">SAP (ABAP · UI5 · Fiori)</span><span class="skill-track"><span class="skill-fill sap"></span></span><span class="skill-pct">78%</span></li>
-                            <li class="skill-row" data-level="92"><span class="skill-label">JavaScript / TypeScript</span><span class="skill-track"><span class="skill-fill js"></span></span><span class="skill-pct">92%</span></li>
-                            <li class="skill-row" data-level="88"><span class="skill-label">React</span><span class="skill-track"><span class="skill-fill react"></span></span><span class="skill-pct">88%</span></li>
-                            <li class="skill-row" data-level="85"><span class="skill-label">Node.js</span><span class="skill-track"><span class="skill-fill node"></span></span><span class="skill-pct">85%</span></li>
-                            <li class="skill-row" data-level="90"><span class="skill-label">AI / LLM &amp; Agents</span><span class="skill-track"><span class="skill-fill ai"></span></span><span class="skill-pct">90%</span></li>
-                            <li class="skill-row" data-level="80"><span class="skill-label">DevOps / Cloud (AWS · Docker)</span><span class="skill-track"><span class="skill-fill devops"></span></span><span class="skill-pct">80%</span></li>
+                            <li class="skill-row" data-level="88"><span class="skill-label">Salesforce (Apex · LWC · Flows)</span><span class="skill-pct">88%</span><span class="skill-track"><span class="skill-fill sf"></span></span></li>
+                            <li class="skill-row" data-level="78"><span class="skill-label">SAP (ABAP · UI5 · Fiori)</span><span class="skill-pct">78%</span><span class="skill-track"><span class="skill-fill sap"></span></span></li>
+                            <li class="skill-row" data-level="92"><span class="skill-label">JavaScript / TypeScript</span><span class="skill-pct">92%</span><span class="skill-track"><span class="skill-fill js"></span></span></li>
+                            <li class="skill-row" data-level="88"><span class="skill-label">React</span><span class="skill-pct">88%</span><span class="skill-track"><span class="skill-fill react"></span></span></li>
+                            <li class="skill-row" data-level="85"><span class="skill-label">Node.js</span><span class="skill-pct">85%</span><span class="skill-track"><span class="skill-fill node"></span></span></li>
+                            <li class="skill-row" data-level="90"><span class="skill-label">AI / LLM &amp; Agents</span><span class="skill-pct">90%</span><span class="skill-track"><span class="skill-fill ai"></span></span></li>
+                            <li class="skill-row" data-level="80"><span class="skill-label">DevOps / Cloud (AWS · Docker)</span><span class="skill-pct">80%</span><span class="skill-track"><span class="skill-fill devops"></span></span></li>
                         </ul>
                     </div>
                 </div>
 
                 <!-- Tech marquee -->
-                <div class="marquee reveal" aria-label="Technology stack">
+                <div class="marquee glass reveal" aria-label="Technology stack">
                     <div class="marquee-track">
                         <i class="devicon-salesforce-plain" title="Salesforce"></i>
                         <i class="devicon-react-original" title="React"></i>
@@ -181,21 +235,21 @@
                         <i class="devicon-vuejs-plain" title="Vue.js"></i>
                         <i class="devicon-mongodb-plain" title="MongoDB"></i>
                         <!-- duplicate for seamless loop -->
-                        <i class="devicon-salesforce-plain" title="Salesforce"></i>
-                        <i class="devicon-react-original" title="React"></i>
-                        <i class="devicon-nodejs-plain" title="Node.js"></i>
-                        <i class="devicon-typescript-plain" title="TypeScript"></i>
-                        <i class="devicon-javascript-plain" title="JavaScript"></i>
-                        <i class="devicon-postgresql-plain" title="PostgreSQL"></i>
-                        <i class="devicon-amazonwebservices-plain-wordmark" title="AWS"></i>
-                        <i class="devicon-java-plain" title="Java"></i>
-                        <i class="devicon-spring-plain" title="Spring"></i>
-                        <i class="devicon-python-plain" title="Python"></i>
-                        <i class="devicon-docker-plain" title="Docker"></i>
-                        <i class="devicon-git-plain" title="Git"></i>
-                        <i class="devicon-firebase-plain" title="Firebase"></i>
-                        <i class="devicon-vuejs-plain" title="Vue.js"></i>
-                        <i class="devicon-mongodb-plain" title="MongoDB"></i>
+                        <i class="devicon-salesforce-plain" aria-hidden="true"></i>
+                        <i class="devicon-react-original" aria-hidden="true"></i>
+                        <i class="devicon-nodejs-plain" aria-hidden="true"></i>
+                        <i class="devicon-typescript-plain" aria-hidden="true"></i>
+                        <i class="devicon-javascript-plain" aria-hidden="true"></i>
+                        <i class="devicon-postgresql-plain" aria-hidden="true"></i>
+                        <i class="devicon-amazonwebservices-plain-wordmark" aria-hidden="true"></i>
+                        <i class="devicon-java-plain" aria-hidden="true"></i>
+                        <i class="devicon-spring-plain" aria-hidden="true"></i>
+                        <i class="devicon-python-plain" aria-hidden="true"></i>
+                        <i class="devicon-docker-plain" aria-hidden="true"></i>
+                        <i class="devicon-git-plain" aria-hidden="true"></i>
+                        <i class="devicon-firebase-plain" aria-hidden="true"></i>
+                        <i class="devicon-vuejs-plain" aria-hidden="true"></i>
+                        <i class="devicon-mongodb-plain" aria-hidden="true"></i>
                     </div>
                 </div>
             </div>
@@ -204,13 +258,16 @@
         <!-- ===== TIMELINE ===== -->
         <section id="timeline" class="timeline-section">
             <div class="container">
-                <h2 class="section-title reveal">My Journey</h2>
-                <div class="vtimeline">
-                    <div class="vtimeline-line" aria-hidden="true"></div>
+                <header class="section-head reveal">
+                    <span class="section-kicker">Journey</span>
+                    <h2 class="section-title">From chess in C# to enterprise AI</h2>
+                </header>
+                <div class="vtimeline" id="vtimeline">
+                    <div class="vtimeline-line" aria-hidden="true"><span class="vtimeline-progress" id="vtimeline-progress"></span></div>
 
                     <div class="vtimeline-item current reveal">
                         <div class="vtimeline-dot pulse"><i class="fas fa-briefcase"></i></div>
-                        <div class="vtimeline-content">
+                        <div class="vtimeline-content glass spotlight">
                             <span class="vt-period">January 2026 – Present</span>
                             <h3>Full Stack Developer &amp; Salesforce Engineer</h3>
                             <h4>Dicomano</h4>
@@ -236,7 +293,7 @@
 
                     <div class="vtimeline-item reveal">
                         <div class="vtimeline-dot"><i class="fas fa-video"></i></div>
-                        <div class="vtimeline-content">
+                        <div class="vtimeline-content glass spotlight">
                             <span class="vt-period">September 2025 – December 2025</span>
                             <h3>Client Project — BlackBox</h3>
                             <h4>Freelance / Client Engagement</h4>
@@ -252,7 +309,7 @@
 
                     <div class="vtimeline-item reveal">
                         <div class="vtimeline-dot"><i class="fas fa-rocket"></i></div>
-                        <div class="vtimeline-content">
+                        <div class="vtimeline-content glass spotlight">
                             <span class="vt-period">September 2025 – October 2025</span>
                             <h3>Placeil Program — Participant</h3>
                             <h4>Tech Placement Program</h4>
@@ -266,7 +323,7 @@
 
                     <div class="vtimeline-item reveal">
                         <div class="vtimeline-dot"><i class="fas fa-code-branch"></i></div>
-                        <div class="vtimeline-content">
+                        <div class="vtimeline-content glass spotlight">
                             <span class="vt-period">June 2025 – September 2025</span>
                             <h3>Full Stack Web Development Bootcamp</h3>
                             <h4>Elevation</h4>
@@ -281,7 +338,7 @@
 
                     <div class="vtimeline-item reveal">
                         <div class="vtimeline-dot"><i class="fas fa-chalkboard-teacher"></i></div>
-                        <div class="vtimeline-content">
+                        <div class="vtimeline-content glass spotlight">
                             <span class="vt-period">2024 – June 2025</span>
                             <h3>AI Systems Educator &amp; Private Tutor</h3>
                             <h4>Independent</h4>
@@ -295,7 +352,7 @@
 
                     <div class="vtimeline-item reveal">
                         <div class="vtimeline-dot"><i class="fas fa-laptop-code"></i></div>
-                        <div class="vtimeline-content">
+                        <div class="vtimeline-content glass spotlight">
                             <span class="vt-period">2024 – 2025</span>
                             <h3>Junior Software Engineer</h3>
                             <h4>Papaya Startup</h4>
@@ -310,7 +367,7 @@
 
                     <div class="vtimeline-item reveal">
                         <div class="vtimeline-dot"><i class="fas fa-university"></i></div>
-                        <div class="vtimeline-content">
+                        <div class="vtimeline-content glass spotlight">
                             <span class="vt-period">2021 – June 2025</span>
                             <h3>B.Sc. in Software Engineering</h3>
                             <h4>Shamoon College of Engineering (SCE)</h4>
@@ -324,7 +381,7 @@
 
                     <div class="vtimeline-item reveal">
                         <div class="vtimeline-dot"><i class="fas fa-user-tie"></i></div>
-                        <div class="vtimeline-content">
+                        <div class="vtimeline-content glass spotlight">
                             <span class="vt-period">2021 – 2025</span>
                             <h3>Security Officer &amp; Team Manager</h3>
                             <h4>Security Sector</h4>
@@ -338,7 +395,7 @@
 
                     <div class="vtimeline-item reveal">
                         <div class="vtimeline-dot"><i class="fas fa-shield-alt"></i></div>
-                        <div class="vtimeline-content">
+                        <div class="vtimeline-content glass spotlight">
                             <span class="vt-period">2018 – 2021</span>
                             <h3>Combat Soldier &amp; Driver</h3>
                             <h4>Israel Defense Forces</h4>
@@ -352,7 +409,7 @@
 
                     <div class="vtimeline-item reveal">
                         <div class="vtimeline-dot"><i class="fas fa-handshake"></i></div>
-                        <div class="vtimeline-content">
+                        <div class="vtimeline-content glass spotlight">
                             <span class="vt-period">2017 – 2018</span>
                             <h3>Sales Representative</h3>
                             <h4>Retail / Sales</h4>
@@ -366,7 +423,7 @@
 
                     <div class="vtimeline-item reveal">
                         <div class="vtimeline-dot"><i class="fas fa-hands-helping"></i></div>
-                        <div class="vtimeline-content">
+                        <div class="vtimeline-content glass spotlight">
                             <span class="vt-period">2015 – 2018</span>
                             <h3>Volunteer @ Aharai &amp; Scouts</h3>
                             <h4>Community Leadership</h4>
@@ -380,7 +437,7 @@
 
                     <div class="vtimeline-item reveal">
                         <div class="vtimeline-dot"><i class="fas fa-school"></i></div>
-                        <div class="vtimeline-content">
+                        <div class="vtimeline-content glass spotlight">
                             <span class="vt-period">2014 – 2017</span>
                             <h3>High School Diploma</h3>
                             <h4>10-unit Computer Science Track</h4>
@@ -398,51 +455,57 @@
         <!-- ===== PROJECTS ===== -->
         <section id="projects" class="projects-section">
             <div class="container">
-                <h2 class="section-title reveal">Featured Projects</h2>
+                <header class="section-head reveal">
+                    <span class="section-kicker">Work</span>
+                    <h2 class="section-title">Selected projects</h2>
+                    <p class="section-lead">Tap any card for a quick look.</p>
+                </header>
 
-                <!-- Featured (top 3) -->
-                <div class="featured-grid">
-                    <article class="featured-card reveal pattern-1">
-                        <div class="featured-glow" aria-hidden="true"></div>
-                        <div class="card-thumb thumb-ai" role="img" aria-label="AI Crypto Advisor screenshot" style="background-image:url('images/snap-ai-crypto.png')"><i class="fas fa-robot"></i></div>
-                        <div class="featured-head">
-                            <i class="fas fa-robot featured-icon"></i>
-                            <h3>AI Crypto Advisor</h3>
-                        </div>
+                <!-- iOS segmented control -->
+                <div class="segmented-wrap reveal">
+                    <div class="segmented glass" id="project-filter" role="tablist" aria-label="Filter projects">
+                        <span class="segmented-thumb" aria-hidden="true"></span>
+                        <button role="tab" aria-selected="true" data-filter="all">All</button>
+                        <button role="tab" aria-selected="false" data-filter="ai">AI</button>
+                        <button role="tab" aria-selected="false" data-filter="fullstack">Full Stack</button>
+                        <button role="tab" aria-selected="false" data-filter="backend">Backend</button>
+                        <button role="tab" aria-selected="false" data-filter="enterprise">Enterprise</button>
+                    </div>
+                </div>
+
+                <div class="projects-grid" id="projects-grid">
+                    <article class="project-card glass tilt spotlight reveal featured" data-cat="ai fullstack" tabindex="0">
+                        <div class="card-thumb" role="img" aria-label="AI Crypto Advisor screenshot" style="background-image:url('images/snap-ai-crypto.png')"><i class="fas fa-robot"></i></div>
+                        <span class="badge-featured"><i class="fas fa-star"></i> Featured</span>
+                        <h3>AI Crypto Advisor</h3>
                         <p>A personalized crypto investor dashboard powered by AI — pick your assets and investor profile, then get live prices, news, and AI-generated insights tuned to your style.</p>
                         <div class="tech-pills">
                             <span class="pill">TypeScript</span><span class="pill">React</span><span class="pill">AI / LLM</span><span class="pill">Vercel</span>
                         </div>
                         <div class="card-links">
                             <a href="https://ai-crypto-advisor-olive.vercel.app" target="_blank" rel="noopener" class="btn btn-sm">Live Demo <i class="fas fa-up-right-from-square"></i></a>
-                            <a href="https://github.com/Gabrielab5/AI-Crypto-advisor" target="_blank" rel="noopener" class="btn btn-sm btn-outline"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://github.com/Gabrielab5/AI-Crypto-advisor" target="_blank" rel="noopener" class="btn btn-sm btn-glass"><i class="fab fa-github"></i> Code</a>
                         </div>
                     </article>
 
-                    <article class="featured-card reveal pattern-2">
-                        <div class="featured-glow" aria-hidden="true"></div>
-                        <div class="card-thumb thumb-energy" role="img" aria-label="EnerGenius screenshot" style="background-image:url('images/snap-energenius.png'), url('images/energenius-img.png')"><i class="fas fa-bolt"></i></div>
-                        <div class="featured-head">
-                            <i class="fas fa-bolt featured-icon"></i>
-                            <h3>EnerGenius</h3>
-                        </div>
+                    <article class="project-card glass tilt spotlight reveal featured" data-cat="fullstack" tabindex="0">
+                        <div class="card-thumb" role="img" aria-label="EnerGenius screenshot" style="background-image:url('images/snap-energenius.png'), url('images/energenius-img.png')"><i class="fas fa-bolt"></i></div>
+                        <span class="badge-featured"><i class="fas fa-star"></i> Featured</span>
+                        <h3>EnerGenius</h3>
                         <p>A web platform that helps homeowners analyze, forecast and optimize electricity consumption — with real-time visualization and personalized energy-saving recommendations.</p>
                         <div class="tech-pills">
                             <span class="pill">TypeScript</span><span class="pill">React</span><span class="pill">Firebase</span><span class="pill">Cloud</span>
                         </div>
                         <div class="card-links">
                             <a href="https://energenius-9908d.web.app/" target="_blank" rel="noopener" class="btn btn-sm">Live Demo <i class="fas fa-up-right-from-square"></i></a>
-                            <a href="https://github.com/Gabrielab5/EnerGenius-Web" target="_blank" rel="noopener" class="btn btn-sm btn-outline"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://github.com/Gabrielab5/EnerGenius-Web" target="_blank" rel="noopener" class="btn btn-sm btn-glass"><i class="fab fa-github"></i> Code</a>
                         </div>
                     </article>
 
-                    <article class="featured-card reveal pattern-3">
-                        <div class="featured-glow" aria-hidden="true"></div>
+                    <article class="project-card glass tilt spotlight reveal featured" data-cat="backend fullstack" tabindex="0">
                         <div class="card-thumb thumb-fallback thumb-issues" aria-hidden="true"><i class="fas fa-diagram-project"></i></div>
-                        <div class="featured-head">
-                            <i class="fas fa-diagram-project featured-icon"></i>
-                            <h3>IssuesFlow</h3>
-                        </div>
+                        <span class="badge-featured"><i class="fas fa-star"></i> Featured</span>
+                        <h3>IssuesFlow</h3>
                         <p>A Spring Boot REST backend with a React + TypeScript SPA for project &amp; ticket tracking — users, mentions, dependencies, audit logs, soft deletion and JWT auth in a Jira-inspired Kanban UI.</p>
                         <div class="tech-pills">
                             <span class="pill">Java</span><span class="pill">Spring Boot</span><span class="pill">React</span><span class="pill">Docker</span>
@@ -451,13 +514,9 @@
                             <a href="https://github.com/Gabrielab5/IssuesFlow" target="_blank" rel="noopener" class="btn btn-sm"><i class="fab fa-github"></i> View Project</a>
                         </div>
                     </article>
-                </div>
 
-                <!-- Standard (next 5) -->
-                <h2 class="section-subtitle reveal">More Highlights</h2>
-                <div class="standard-grid">
-                    <article class="std-card reveal">
-                        <div class="card-thumb thumb-blckbx" role="img" aria-label="BlackBox screenshot" style="background-image:url('images/snap-blckbx.png')"><i class="fas fa-video"></i></div>
+                    <article class="project-card glass tilt spotlight reveal" data-cat="ai backend" tabindex="0">
+                        <div class="card-thumb" role="img" aria-label="BlackBox screenshot" style="background-image:url('images/snap-blckbx.png')"><i class="fas fa-video"></i></div>
                         <h3>BlackBox</h3>
                         <p>Production-ready camera monitoring system with real-time AI alerting — FastAPI + React, OpenAI Vision, Firebase and Twilio WhatsApp alerts, fully containerized with Docker.</p>
                         <div class="tech-pills"><span class="pill">Python</span><span class="pill">FastAPI</span><span class="pill">Docker</span><span class="pill">AI Vision</span></div>
@@ -467,7 +526,7 @@
                         </div>
                     </article>
 
-                    <article class="std-card reveal">
+                    <article class="project-card glass tilt spotlight reveal" data-cat="enterprise" tabindex="0">
                         <div class="card-thumb thumb-fallback thumb-sap" aria-hidden="true"><i class="fas fa-clock"></i></div>
                         <h3>SAP Employee Time Mgmt</h3>
                         <p>An SAP UI5 / Fiori application for employee time tracking with start/stop logging, built on an ABAP OnPremise OData service.</p>
@@ -477,8 +536,8 @@
                         </div>
                     </article>
 
-                    <article class="std-card reveal">
-                        <div class="card-thumb thumb-cooklist" role="img" aria-label="CookList screenshot" style="background-image:url('images/snap-cooklist.png')"><i class="fas fa-utensils"></i></div>
+                    <article class="project-card glass tilt spotlight reveal" data-cat="fullstack" tabindex="0">
+                        <div class="card-thumb" role="img" aria-label="CookList screenshot" style="background-image:url('images/snap-cooklist.png')"><i class="fas fa-utensils"></i></div>
                         <h3>CookList</h3>
                         <p>A React recipe and cooking-list application with authentication and a clean, responsive interface, deployed to Render.</p>
                         <div class="tech-pills"><span class="pill">React</span><span class="pill">JavaScript</span><span class="pill">Vite</span></div>
@@ -488,8 +547,8 @@
                         </div>
                     </article>
 
-                    <article class="std-card reveal">
-                        <div class="card-thumb thumb-quicknotes" role="img" aria-label="QuickNotes screenshot" style="background-image:url('images/snap-quicknotes.png')"><i class="fas fa-note-sticky"></i></div>
+                    <article class="project-card glass tilt spotlight reveal" data-cat="fullstack" tabindex="0">
+                        <div class="card-thumb" role="img" aria-label="QuickNotes screenshot" style="background-image:url('images/snap-quicknotes.png')"><i class="fas fa-note-sticky"></i></div>
                         <h3>QuickNotes</h3>
                         <p>A fast React notes app — create, edit and delete notes with persistent storage, category filtering and search.</p>
                         <div class="tech-pills"><span class="pill">React</span><span class="pill">JavaScript</span><span class="pill">LocalStorage</span></div>
@@ -499,8 +558,8 @@
                         </div>
                     </article>
 
-                    <article class="std-card reveal">
-                        <div class="card-thumb thumb-tweeter" role="img" aria-label="Tweeter 2.0 screenshot" style="background-image:url('images/snap-tweeter.png')"><i class="fab fa-twitter"></i></div>
+                    <article class="project-card glass tilt spotlight reveal" data-cat="fullstack" tabindex="0">
+                        <div class="card-thumb" role="img" aria-label="Tweeter 2.0 screenshot" style="background-image:url('images/snap-tweeter.png')"><i class="fab fa-twitter"></i></div>
                         <h3>Tweeter 2.0</h3>
                         <p>A Twitter-like social app built with React + Vite — user authentication via Supabase, infinite scrolling, profiles and persistent data.</p>
                         <div class="tech-pills"><span class="pill">React</span><span class="pill">Vite</span><span class="pill">Supabase</span></div>
@@ -510,59 +569,72 @@
                         </div>
                     </article>
                 </div>
+                <p class="empty-state" id="empty-state" hidden>No projects in this category yet.</p>
 
-                <!-- More projects accordion -->
+                <!-- More projects — iOS inset grouped list -->
                 <div class="more-projects reveal">
-                    <button class="more-toggle" id="more-toggle" aria-expanded="false" aria-controls="more-list">
-                        <span><i class="fas fa-folder-open"></i> + 7 more projects</span>
+                    <button class="more-toggle glass" id="more-toggle" aria-expanded="false" aria-controls="more-list">
+                        <span><span class="list-icon li-indigo"><i class="fas fa-folder-open"></i></span> 7 more projects</span>
                         <i class="fas fa-chevron-down more-chevron"></i>
                     </button>
-                    <div class="more-list" id="more-list" hidden>
+                    <div class="more-list glass" id="more-list" hidden>
                         <a href="https://github.com/Gabrielab5/business-licensing-generation-system-" target="_blank" rel="noopener" class="more-item">
-                            <i class="fas fa-file-contract"></i>
+                            <span class="list-icon li-green"><i class="fas fa-file-contract"></i></span>
                             <div><strong>Business Licensing System</strong><span>AI-powered licensing-report generator for Israeli food establishments. Python · TypeScript</span></div>
+                            <i class="fas fa-chevron-right list-chevron"></i>
                         </a>
                         <a href="https://github.com/Gabrielab5/dilithium_signatures" target="_blank" rel="noopener" class="more-item">
-                            <i class="fas fa-shield-halved"></i>
+                            <span class="list-icon li-purple"><i class="fas fa-shield-halved"></i></span>
                             <div><strong>Dilithium Signatures</strong><span>Post-quantum digital signature algorithm (key-gen, signing, verification). Python</span></div>
+                            <i class="fas fa-chevron-right list-chevron"></i>
                         </a>
                         <a href="https://github.com/Gabrielab5/popcorn-palace" target="_blank" rel="noopener" class="more-item">
-                            <i class="fas fa-film"></i>
+                            <span class="list-icon li-pink"><i class="fas fa-film"></i></span>
                             <div><strong>Popcorn Palace</strong><span>Spring Boot REST API for movies, showtimes &amp; bookings with full validation. Java</span></div>
+                            <i class="fas fa-chevron-right list-chevron"></i>
                         </a>
                         <a href="https://github.com/Gabrielab5/Car-Agency-Project" target="_blank" rel="noopener" class="more-item">
-                            <i class="fas fa-car"></i>
+                            <span class="list-icon li-blue"><i class="fas fa-car"></i></span>
                             <div><strong>Vehicle Agency</strong><span>Multithreaded vehicle dealership management system (land/water/air). Java</span></div>
+                            <i class="fas fa-chevron-right list-chevron"></i>
                         </a>
                         <a href="https://github.com/Gabrielab5/Recipes-Api" target="_blank" rel="noopener" class="more-item">
-                            <i class="fas fa-bowl-food"></i>
+                            <span class="list-icon li-amber"><i class="fas fa-bowl-food"></i></span>
                             <div><strong>Recipes API</strong><span>Recipe application with a RESTful API backend. JavaScript</span></div>
+                            <i class="fas fa-chevron-right list-chevron"></i>
                         </a>
                         <a href="https://github.com/Gabrielab5/Titanic-Survival-Prediction-using-Bagging" target="_blank" rel="noopener" class="more-item">
-                            <i class="fas fa-chart-line"></i>
+                            <span class="list-icon li-teal"><i class="fas fa-chart-line"></i></span>
                             <div><strong>Titanic Survival Prediction</strong><span>Machine-learning classifier using bagging ensembles. Python</span></div>
+                            <i class="fas fa-chevron-right list-chevron"></i>
                         </a>
                         <a href="https://github.com/Gabrielab5/Stock-Exchange-Project" target="_blank" rel="noopener" class="more-item">
-                            <i class="fas fa-arrow-trend-up"></i>
+                            <span class="list-icon li-red"><i class="fas fa-arrow-trend-up"></i></span>
                             <div><strong>Stock Exchange</strong><span>Multipage stock-exchange data website. JavaScript</span></div>
+                            <i class="fas fa-chevron-right list-chevron"></i>
                         </a>
                     </div>
                 </div>
 
                 <div class="github-cta reveal">
-                    <a href="https://github.com/Gabrielab5" target="_blank" rel="noopener" class="btn btn-outline"><i class="fab fa-github"></i> See all on GitHub</a>
+                    <a href="https://github.com/Gabrielab5" target="_blank" rel="noopener" class="btn btn-glass magnetic"><i class="fab fa-github"></i> See all on GitHub</a>
                 </div>
             </div>
         </section>
 
         <!-- ===== RESUME ===== -->
         <section id="resume" class="resume-section">
-            <div class="container reveal">
-                <h2 class="section-title">Résumé</h2>
-                <p>Want the full picture? View my interactive résumé or download it as a PDF for a detailed look at my skills and experience.</p>
-                <div class="resume-buttons">
-                    <a href="resume.html" class="btn">View Résumé <i class="fas fa-up-right-from-square"></i></a>
-                    <a href="Gabriela-Brailovsky-Resume.pdf" download class="btn btn-outline">Download PDF <i class="fas fa-download"></i></a>
+            <div class="container">
+                <div class="resume-card glass spotlight reveal">
+                    <span class="resume-icon"><i class="fas fa-file-lines"></i></span>
+                    <div class="resume-copy">
+                        <h2>Résumé</h2>
+                        <p>Want the full picture? View my interactive résumé or download it as a PDF for a detailed look at my skills and experience.</p>
+                    </div>
+                    <div class="resume-buttons">
+                        <a href="resume.html" class="btn magnetic">View Résumé <i class="fas fa-up-right-from-square"></i></a>
+                        <a href="Gabriela-Brailovsky-Resume.pdf" download class="btn btn-glass magnetic">Download PDF <i class="fas fa-download"></i></a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -570,36 +642,52 @@
         <!-- ===== CONTACT ===== -->
         <section id="contact" class="contact-section">
             <div class="container">
-                <h2 class="section-title reveal">Get In Touch</h2>
+                <header class="section-head reveal">
+                    <span class="section-kicker">Contact</span>
+                    <h2 class="section-title">Let's build something together</h2>
+                </header>
                 <div class="contact-content">
-                    <form class="contact-form reveal" id="contact-form">
+                    <form class="contact-form glass reveal" id="contact-form" novalidate>
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            <input type="email" id="email" name="email" placeholder="you@company.com" autocomplete="email" required>
                             <span class="error-message" id="email-error"></span>
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or role…" maxlength="1500" required></textarea>
+                            <span class="char-count" id="char-count">0 / 1500</span>
                             <span class="error-message" id="message-error"></span>
                         </div>
-                        <button type="submit" class="btn" id="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+                        <button type="submit" class="btn btn-block" id="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
                     </form>
+
                     <div class="contact-info reveal">
-                        <h3>Contact Information</h3>
-                        <ul class="contact-info-list">
-                            <li><a href="mailto:gabrielab5000@gmail.com"><i class="fas fa-envelope"></i> gabrielab5000@gmail.com</a></li>
-                            <li><a href="tel:+972523381612"><i class="fas fa-phone"></i> +972 52 338 1612</a></li>
-                            <li><i class="fas fa-map-marker-alt"></i> Central District, Israel</li>
-                        </ul>
+                        <div class="ios-list glass">
+                            <div class="ios-row">
+                                <span class="list-icon li-blue"><i class="fas fa-envelope"></i></span>
+                                <a href="mailto:gabrielab5000@gmail.com" class="ios-row-main"><small>Email</small>gabrielab5000@gmail.com</a>
+                                <button class="copy-btn" data-copy="gabrielab5000@gmail.com" aria-label="Copy email address"><i class="far fa-copy"></i></button>
+                            </div>
+                            <div class="ios-row">
+                                <span class="list-icon li-green"><i class="fas fa-phone"></i></span>
+                                <a href="tel:+972523381612" class="ios-row-main"><small>Phone</small>+972 52 338 1612</a>
+                                <button class="copy-btn" data-copy="+972523381612" aria-label="Copy phone number"><i class="far fa-copy"></i></button>
+                            </div>
+                            <div class="ios-row">
+                                <span class="list-icon li-red"><i class="fas fa-location-dot"></i></span>
+                                <span class="ios-row-main"><small>Location</small>Central District, Israel</span>
+                                <span class="local-time" id="local-time" title="My local time"></span>
+                            </div>
+                        </div>
                         <div class="social-icons">
-                            <a href="https://www.linkedin.com/in/gabrielabrail/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://github.com/Gabrielab5" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                            <a href="https://gabrielab5.github.io/" target="_blank" rel="noopener" class="social-icon" aria-label="Portfolio"><i class="fas fa-globe"></i></a>
+                            <a href="https://www.linkedin.com/in/gabrielabrail/" target="_blank" rel="noopener" class="social-icon glass magnetic" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://github.com/Gabrielab5" target="_blank" rel="noopener" class="social-icon glass magnetic" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="resume.html" class="social-icon glass magnetic" aria-label="Résumé"><i class="fas fa-file-lines"></i></a>
                         </div>
                     </div>
                 </div>
@@ -608,16 +696,40 @@
     </main>
 
     <footer class="footer">
-        <div class="container">
+        <div class="container footer-inner glass">
             <h3>Let's build something great together.</h3>
-            <p>&copy; 2026 Gabriela Brailovsky. Designed &amp; built from scratch.</p>
+            <p>&copy; 2026 Gabriela Brailovsky · Designed &amp; built from scratch · Press <kbd>⌘</kbd> <kbd>K</kbd> to search</p>
         </div>
     </footer>
 
-    <button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+    <button class="back-to-top glass" id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Dynamic-Island style toast -->
+    <div class="island-toast" id="toast" role="status" aria-live="polite"><i class="fas fa-circle-check"></i><span id="toast-text"></span></div>
+
+    <!-- Project quick-look sheet -->
+    <div class="sheet-backdrop" id="sheet-backdrop" hidden>
+        <div class="sheet glass-strong" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+            <div class="sheet-grabber" id="sheet-grabber" aria-hidden="true"></div>
+            <button class="sheet-close" id="sheet-close" aria-label="Close"><i class="fas fa-xmark"></i></button>
+            <div class="sheet-body" id="sheet-body"></div>
+        </div>
+    </div>
+
+    <!-- Spotlight search -->
+    <div class="spotlight-backdrop" id="spotlight" hidden>
+        <div class="spotlight-panel glass-strong" role="dialog" aria-modal="true" aria-label="Search">
+            <div class="spotlight-input-row">
+                <i class="fas fa-magnifying-glass"></i>
+                <input type="text" id="spotlight-input" placeholder="Search sections, projects, actions…" autocomplete="off" aria-controls="spotlight-results">
+                <kbd>esc</kbd>
+            </div>
+            <ul class="spotlight-results" id="spotlight-results" role="listbox"></ul>
+        </div>
+    </div>
 
     <div id="success-modal" class="modal-overlay hidden">
-        <div class="modal">
+        <div class="modal glass-strong">
             <button class="close-button" aria-label="Close">&times;</button>
             <i class="fas fa-check-circle success-icon"></i>
             <h3>Message sent successfully!</h3>
@@ -626,7 +738,7 @@
     </div>
 
     <div id="error-modal" class="modal-overlay hidden">
-        <div class="modal">
+        <div class="modal glass-strong">
             <button class="close-button" aria-label="Close">&times;</button>
             <i class="fas fa-times-circle error-icon"></i>
             <h3>Message failed to send!</h3>
@@ -634,7 +746,7 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3.11.0/dist/email.min.js"></script>
     <script src="script.js" defer></script>
 </body>
 </html>
