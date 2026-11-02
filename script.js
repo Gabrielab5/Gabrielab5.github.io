@@ -404,6 +404,14 @@ document.addEventListener('DOMContentLoaded', () => {
       items.push({ group: 'Projects', label: a.querySelector('strong').textContent, hint: 'GitHub', icon: 'fa-code-branch', run: () => window.open(a.href, '_blank', 'noopener') });
     });
 
+    const norm = (t) => t.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const seen = new Set(items.filter(i => i.group === 'Projects').map(i => norm(i.label)));
+    $$('.repo-chip').forEach(a => {
+      const name = a.textContent.trim();
+      if (seen.has(norm(name))) return;
+      items.push({ group: 'GitHub repos', label: name, hint: a.dataset.lang || 'GitHub', icon: 'fa-github', brand: true, run: () => window.open(a.href, '_blank', 'noopener') });
+    });
+
     items.push(
       { group: 'Actions', label: 'Toggle light / dark mode', icon: 'fa-circle-half-stroke', run: toggleTheme },
       { group: 'Actions', label: 'Copy email address', icon: 'fa-copy', run: () => copy('gabrielab5000@gmail.com', 'Email copied') },
@@ -416,7 +424,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function render() {
       const q = input.value.trim().toLowerCase();
-      filtered = !q ? items : items.filter(it => (it.label + ' ' + (it.hint || '') + ' ' + it.group).toLowerCase().includes(q));
+      filtered = !q ? items.filter(it => it.group !== 'GitHub repos') : items.filter(it => (it.label + ' ' + (it.hint || '') + ' ' + it.group).toLowerCase().includes(q));
       active = Math.min(active, Math.max(filtered.length - 1, 0));
       list.innerHTML = '';
       if (!filtered.length) {

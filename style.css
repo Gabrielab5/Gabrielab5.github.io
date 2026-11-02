@@ -544,6 +544,38 @@ kbd, .kbd-hint {
 .tag-default { color: var(--text-dim); background: var(--fill); }
 [data-theme="dark"] .tag-sf, :root:not([data-theme="light"]) .tag-sf { color: #a5a4ff; }
 
+/* GitHub repo groups inside the timeline */
+.dot-repos { color: var(--purple); }
+.repo-count {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 1.6em; height: 1.6em; padding: 0 0.45em; margin-left: 0.3rem;
+  border-radius: 999px; background: var(--fill-2); color: var(--text-dim);
+  font-size: 0.7em; font-weight: 700; vertical-align: middle; font-variant-numeric: tabular-nums;
+}
+.repo-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.repo-chip {
+  --lang: var(--text-faint);
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  padding: 0.3rem 0.7rem 0.3rem 0.55rem; border-radius: 999px;
+  background: var(--fill); color: var(--text);
+  font-size: 0.78rem; font-weight: 550; letter-spacing: -0.005em;
+  max-width: 100%; overflow-wrap: anywhere;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.3s var(--spring);
+}
+.repo-chip i { color: var(--text-faint); font-size: 0.85rem; transition: color 0.2s ease; }
+.repo-chip::after { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--lang); flex-shrink: 0; }
+.repo-chip:not([data-lang])::after { display: none; }
+.repo-chip:hover { background: var(--fill-2); color: var(--white); opacity: 1; transform: translateY(-2px); }
+.repo-chip:hover i { color: var(--blue); }
+.repo-chip[data-lang="JavaScript"] { --lang: #f1e05a; }
+.repo-chip[data-lang="TypeScript"] { --lang: #3178c6; }
+.repo-chip[data-lang="Python"] { --lang: #3572a5; }
+.repo-chip[data-lang="Java"] { --lang: #b07219; }
+.repo-chip[data-lang="Apex"] { --lang: #1797c0; }
+.repo-chip[data-lang="Vue"] { --lang: #41b883; }
+.repo-chip[data-lang="Kotlin"] { --lang: #a97bff; }
+.repo-chip[data-lang="HTML"] { --lang: #e34c26; }
+
 /* ---------- Projects ---------- */
 .segmented-wrap { display: flex; justify-content: center; margin-bottom: 2.2rem; }
 .segmented {
